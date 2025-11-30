@@ -1,5 +1,7 @@
-import os, re, json
-from typing import List, Dict
+import os
+import re
+import json
+from typing import List, Dict, Any
 
 from dotenv import load_dotenv
 from openai import OpenAI
@@ -13,23 +15,87 @@ FILE_METADATA = {
     "ADA_Obesity.txt": {"domain": "obesity", "population": "adults"},
 }
 
+# Map variable names (lowercase) to guideline domains
 VARIABLE_TO_DOMAIN = {
-    "MVPA": "behaviors",
-    "Sugary_drinks_per_day": "behaviors",
-    "BMI": "obesity",
-    "Waist": "obesity",
-    "Triglycerides": "obesity",
-    "HbA1c": "behaviors",
+    "mvpa": "behaviors",
+    "sugary_drinks_per_day": "behaviors",
+    "bmi": "obesity",
+    "waist": "obesity",      # generic
+    "wst": "obesity",        # waist in your dict
+    "triglycerides": "obesity",
+    "tyg": "obesity",        # if treating as lipid-related
+    "hba1c": "behaviors",
+    "hb1ac": "behaviors",    # spelling in your dict
+}
+
+# ----------------- PATIENT OUTPUT DICT (EXAMPLE) -----------------
+result = {
+    'gender':1.0,'age':56.0,'race':2.0,'educ':3.0,'marry':1.0,
+    'house':1.0,'pov':2.15,'wt':96.4,'ht':168.0,'bmi':34.1,
+    'wst':110.5,'hip':112.0,'dia':84.0,'pulse':78.0,'sys':138.0,
+    'alt':42.0,'albumin':4.3,'ast':35.0,'crea':0.98,'chol':205.0,
+    'tyg':230.0,'ggt':48.0,'wbc':7.2,'hb':14.2,'hct':43.0,
+    'ldl':132.0,'hdl':38.0,'acratio':3.1,'glu':182.0,
+    'insulin':18.5,'crp':4.8,'hb1ac':8.6,'mvpa':40.0,
+    'ac_week':0.0,
+    'context':'Middle-aged patient with long-standing type 2 diabetes, obesity, inconsistent follow-up, and limited financial resources. Frequently eats late meals due to shift-based work schedule, with high intake of refined carbohydrates and sugary beverages. Reports chronic knee discomfort limiting high-impact exercise. Demonstrates motivation to prevent future complications but experiences difficulty implementing recommendations without clear, structured steps.',
+    "1week":("mvpa",20.0),
+    "2week":("ac_week",1.0),
+    "3week":("sugary_drinks_per_day",-0.5),
+    "4week":("wst",-1.0),
+    "5week":("glu",-5.0),
+    "6week":("hb1ac",-0.1),
+    "7week":("tyg",-10.0),
+    "8week":("sys",-2.0),
+    "old_score":103.0,
+    "new_score":93.0
 }
 
 # ----------------- HELPERS -----------------
-def chunk_text(text: str, size: int = 900, overlap: int = 120) -> List[str]:
-    chunks, start = [], 0
-    while start < len(text):
-        end = start + size
-        chunks.append(text[start:end])
-        start += (size - overlap)
+def chunk_text_by_headings(
+    text: str,
+    max_chars: int = 900,
+    overlap: int = 120,
+) -> List[str]:
+    lines = text.splitlines()
+    heading_pattern = re.compile(r"^(#{1,4})\s+.+")  # #, ##, ###, #### + space + text
+
+    sections: List[str] = []
+    current_section: List[str] = []
+
+    for line in lines:
+        if heading_pattern.match(line):
+            if current_section:
+                section_text = "\n".join(current_section).strip()
+                if section_text:
+                    sections.append(section_text)
+                current_section = []
+            current_section.append(line)
+        else:
+            current_section.append(line)
+
+    if current_section:
+        section_text = "\n".join(current_section).strip()
+        if section_text:
+            sections.append(section_text)
+
+    chunks: List[str] = []
+    for sec in sections:
+        if len(sec) <= max_chars:
+            chunks.append(sec)
+        else:
+            start = 0
+            while start < len(sec):
+                end = start + max_chars
+                chunk = sec[start:end]
+                chunks.append(chunk)
+                start += max_chars - overlap
+
     return chunks
+
+
+def chunk_text(text: str, size: int = 900, overlap: int = 120) -> List[str]:
+    return chunk_text_by_headings(text, max_chars=size, overlap=overlap)
 
 
 class OpenAIEmbeddingFunction(EmbeddingFunction):
@@ -52,12 +118,13 @@ def get_or_build_vectorstore():
     client = chromadb.PersistentClient(path=db_path)
     emb = OpenAIEmbeddingFunction()
 
-    existing = client.list_collections()
-    if "ada" in existing:
+    try:
+        col = client.get_collection("ada", embedding_function=emb)
         print("Found existing 'ada' collection. Reusing vectorstore.")
-        return client.get_collection("ada", embedding_function=emb)
+        return col
+    except Exception:
+        print("No existing 'ada' collection. Building vectorstore from scratch...")
 
-    print("No existing 'ada' collection. Building vectorstore from scratch...")
     col = client.create_collection(name="ada", embedding_function=emb)
 
     for fname in os.listdir("resources"):
@@ -65,49 +132,64 @@ def get_or_build_vectorstore():
             continue
         with open(os.path.join("resources", fname), "r", encoding="utf-8") as f:
             text = f.read()
-        chunks = chunk_text(text)
+
+        chunks = chunk_text(text, size=900, overlap=120)
         meta = FILE_METADATA.get(fname, {})
+
         for i, ch in enumerate(chunks):
             col.add(ids=[f"{fname}_{i}"], documents=[ch], metadatas=[meta])
+
         print(f"Loaded {fname}: {len(chunks)} chunks")
+
     print("Vectorstore build complete.")
     return col
 
 
-def parse_patient_file(path: str) -> Dict[str, str]:
-    with open(path, "r", encoding="utf-8") as f:
-        text = f.read()
-    parts = re.split(r"(CLINICAL INFO|RL ACTION PLAN|PATIENT CONTEXT)", text)
-    out = {"clinical": "", "rl": "", "context": ""}
-    for i in range(len(parts)):
-        if parts[i] == "CLINICAL INFO":
-            out["clinical"] = parts[i + 1].strip()
-        elif parts[i] == "RL ACTION PLAN":
-            out["rl"] = parts[i + 1].strip()
-        elif parts[i] == "PATIENT CONTEXT":
-            out["context"] = parts[i + 1].strip()
-    return out
+def build_rl_actions_from_dict(output_dict: Dict[str, Any]) -> List[Dict[str, str]]:
+    week_pattern = re.compile(r"(\d+)week$")
+    actions_with_week: List[Dict[str, Any]] = []
 
-
-def extract_rl_actions(rl_text: str) -> List[Dict]:
-    steps = rl_text.split("Step")
-    actions = []
-    for s in steps:
-        if "Variable:" not in s:
+    for key, value in output_dict.items():
+        m = week_pattern.fullmatch(key)
+        if not m:
             continue
-        var = re.search(r"Variable:\s*(.+)", s)
-        baseline = re.search(r"Baseline value:\s*(.+)", s)
-        delta = re.search(r"Suggested delta:\s*(.+)", s)
-        target = re.search(r"Target value:\s*(.+)", s)
-        actions.append(
+
+        week = int(m.group(1))
+        if not isinstance(value, (list, tuple)) or len(value) != 2:
+            continue
+
+        var_name, delta = value
+        baseline = output_dict.get(var_name)
+        target = None
+        try:
+            if baseline is not None and delta is not None:
+                target = float(baseline) + float(delta)
+        except (TypeError, ValueError):
+            pass
+
+        actions_with_week.append(
             {
-                "variable": var.group(1).strip() if var else "",
-                "baseline": baseline.group(1).strip() if baseline else "",
-                "delta": delta.group(1).strip() if delta else "",
-                "target": target.group(1).strip() if target else "",
+                "week": week,
+                "variable": str(var_name),
+                "baseline": baseline,
+                "delta": delta,
+                "target": target,
             }
         )
-    return actions
+
+    actions_with_week.sort(key=lambda x: x["week"])
+
+    rl_actions: List[Dict[str, str]] = []
+    for a in actions_with_week:
+        rl_actions.append(
+            {
+                "variable": a["variable"],
+                "baseline": "" if a["baseline"] is None else str(a["baseline"]),
+                "delta": "" if a["delta"] is None else str(a["delta"]),
+                "target": "" if a["target"] is None else str(a["target"]),
+            }
+        )
+    return rl_actions
 
 
 def retrieve_guidelines(collection, domain: str, population: str, query: str) -> str:
@@ -138,15 +220,26 @@ def llm_generate(
     system_prompt = (
         "You are a warm, supportive diabetes lifestyle coach who ALWAYS stays inside ADA guidelines. "
         "You NEVER recommend medication changes or adjust prescriptions. "
-        "You speak directly to the patient in clear, everyday language, roughly at a 7th–8th grade reading level. "
+        "You speak directly to the patient in clear, everyday language. "
         "Use short sentences. Avoid terms like 'glycemic control', 'cardiometabolic', or 'dyslipidemia'. "
         "Instead, say things like 'blood sugar', 'heart and blood vessels', or 'cholesterol and fats in the blood'. "
         "You acknowledge their real-life constraints (work schedule, money, mobility, stress) and say out loud that "
         "some changes may be hard, then suggest realistic options anyway.\n\n"
+        "For EACH RL action, you receive these fields:\n"
+        "- 'variable': name of the measure to change (for example 'glu', 'hb1ac', 'mvpa', 'bmi', or another label).\n"
+        "- 'baseline': the current value (as a string).\n"
+        "- 'delta': the suggested change (target minus baseline). A negative number means the goal is to LOWER the variable. "
+        "A positive number means the goal is to RAISE the variable.\n"
+        "- 'target': the desired value after the change (as a string).\n\n"
+        "You do NOT need to know the exact clinical meaning of every variable name. If you recognize it (for example, as blood sugar, "
+        "activity, weight, blood pressure, cholesterol, etc.), you can use that knowledge. If you do not recognize it, treat it as "
+        "'this health measure' and still suggest reasonable, ADA-consistent behavior changes that could plausibly move it in the "
+        "desired direction (up or down), such as changes in food, movement, sleep, stress, or substance use.\n\n"
         "For EACH RL action, you must:\n"
         "- Address the patient as 'you'.\n"
         "- Be encouraging, non-judgmental, and practical.\n"
-        "- Be specific about behaviors (e.g., 'brisk walking for 10 minutes', '2 sets of 10 sit-to-stands').\n"
+        "- Use the sign of 'delta' and the values of 'baseline' and 'target' to understand what direction of change is needed.\n"
+        "- Be specific about behaviors (e.g., 'walk briskly for 10 minutes', 'limit sugary drinks at dinner', 'do 2 sets of 10 sit-to-stands').\n"
         "- Explicitly connect your plan to the patient’s context.\n"
         "- Stay consistent with ADA Standards of Care for lifestyle and behavior."
     )
@@ -159,17 +252,23 @@ def llm_generate(
         "task": (
             "Write a numbered list, one item per RL action, speaking DIRECTLY to the patient.\n\n"
             "For each item, use this structure with VERY clear labels and short paragraphs:\n\n"
-            "1) A short heading like: '1. Moving more: from 15 to 60 minutes per week'.\n\n"
+            "1) A short heading like: '1. Working on glu: from 204 to 199', or "
+            "'1. Working on [variable]: from [baseline] to [target]'.\n\n"
             "Then four labeled parts:\n"
-            "- 'What this step means:' One short explanation of what you are asking the patient to do.\n"
-            "- 'Why this helps your health:' 1–2 simple sentences about blood sugar, heart, weight, or future problems.\n"
+            "- 'What this step means:' One short explanation of what you are asking the patient to do, "
+            "clearly stating whether the goal is to increase or decrease the variable based on 'delta', and using 'baseline' and 'target' "
+            "to describe the change in simple words.\n"
+            "- 'Why this helps your health:' 1–2 simple sentences about how moving this measure in the right direction can support "
+            "their health over time (for example, helping their body work better, lowering future risks, or helping them feel better day to day). "
+            "Keep it general if you’re not sure what the variable means.\n"
             "- 'A realistic plan for you:' 3–4 sentences that:\n"
             "   * Start by acknowledging that this may be hard in their situation (for example, night shifts, little money, pain, housing), and\n"
             "   * Give 2–3 concrete actions with WHEN and HOW (for example, 'After your shift, walk 10 minutes from the bus stop', "
             "     'On days off, do 2 sets of 10 sit-to-stands from a chair while watching a video', "
-            "     'During your break, swap one energy drink for water').\n"
+            "     'During your break, swap one sweet drink for water'). The actions should be realistic and aimed at moving the variable "
+            "        in the direction suggested by 'delta' (up or down).\n"
             "- 'How this fits ADA guidelines:' 1 short sentence saying this matches ADA diabetes lifestyle guidance, in plain language "
-            "(for example, 'This follows ADA diabetes guidelines that encourage more movement and less sitting to protect your heart and blood sugar.').\n\n"
+            "(for example, 'This fits ADA diabetes guidelines that encourage healthy daily habits to support your health over time.').\n\n"
             "Keep each item under about 120–150 words. Avoid technical jargon. Do NOT talk to a clinician; talk directly to the patient."
         ),
     }
@@ -181,65 +280,92 @@ def llm_generate(
             {"role": "user", "content": json.dumps(user_prompt)},
         ],
         temperature=0.2,
-        max_tokens=950,
+        max_tokens=1500,
     )
     return resp.choices[0].message.content
 
 
-# ----------------- MAIN -----------------
-def main():
+# ----------------- PUBLIC API FUNCTION -----------------
+def get_llm_recommendation(info: Dict[str, Any]) -> str:
+    """
+    End-to-end pipeline:
+    - Builds/loads vectorstore
+    - Parses clinical vars, context, and RL actions from `info`
+    - Retrieves ADA evidence for each RL action
+    - Calls LLM to generate recommendations
+    - Returns a single text string with recommendation + evidence
+    """
     load_dotenv()
     if not os.getenv("OPENAI_API_KEY"):
         raise RuntimeError("OPENAI_API_KEY not found. Put it in a .env file.")
 
-    print("\n[1] Loading or building vectorstore from ADA guideline text files...")
     collection = get_or_build_vectorstore()
 
-    print("\n[2] Loading patient snapshot from input/sample2.txt...")
-    data = parse_patient_file("input/sample2.txt")
-    clinical, rl_text, context = data["clinical"], data["rl"], data["context"]
+    output_dict: Dict[str, Any] = info
 
-    print("\n[3] Parsing RL action plan...")
-    rl_actions = extract_rl_actions(rl_text)
+    week_pattern = re.compile(r"\d+week$")
 
-    age_match = re.search(r"Age.*?:\s*(\d+)", clinical)
-    pop = "older_adults" if age_match and int(age_match.group(1)) >= 65 else "adults"
-    print(f"Detected population subgroup: {pop}")
+    clinical_vars = {
+        k: v
+        for k, v in output_dict.items()
+        if k not in {"context", "old_score", "new_score"}
+        and not week_pattern.fullmatch(k)
+    }
 
-    print("\n[4] Retrieving ADA evidence for each RL step...")
+    context = output_dict.get("context", "")
+    clinical = json.dumps(clinical_vars, indent=2)
+
+    rl_actions = build_rl_actions_from_dict(output_dict)
+
+    age = clinical_vars.get("age")
+    if isinstance(age, (int, float)) and age >= 65:
+        pop = "older_adults"
+    else:
+        pop = "adults"
+
     evidence_blocks: List[Dict] = []
     for step in rl_actions:
         var = step["variable"]
         domain = None
         for key, dom in VARIABLE_TO_DOMAIN.items():
-            if key.lower() in var.lower():
+            if key in var.lower():
                 domain = dom
                 break
         if not domain:
             domain = "behaviors"
+
         q = f"ADA guideline for {var}, lifestyle change, diabetes, feasibility"
         ev = retrieve_guidelines(collection, domain, pop, q)
         evidence_blocks.append(
             {"variable": var, "domain": domain, "population": pop, "evidence": ev}
         )
 
-    print("\n[5] Calling LLM to generate final recommendations...")
     final_output = llm_generate(clinical, context, rl_actions, evidence_blocks)
 
-    print("\n==============================")
-    print("FINAL RECOMMENDATION")
-    print("==============================\n")
-    print(final_output)
-
-    print("\n==============================")
-    print("EVIDENCE USED (RAW ADA CHUNKS)")
-    print("==============================\n")
+    evidence_text_parts = []
     for i, ev in enumerate(evidence_blocks, start=1):
-        print(f"--- RL Action {i}: {ev['variable']} ---")
-        print(ev["evidence"] or "(No evidence chunks retrieved)")
-        print()
+        block = ev["evidence"] or "(No evidence chunks retrieved)"
+        evidence_text_parts.append(
+            f"--- RL Action {i}: {ev['variable']} ---\n{block}"
+        )
+    evidence_text = "\n\n".join(evidence_text_parts)
 
-    print("Done.\n")
+    combined = (
+        "FINAL RECOMMENDATION\n"
+        "====================\n\n"
+        f"{final_output}\n\n"
+        "EVIDENCE USED (RAW ADA CHUNKS)\n"
+        "==============================\n\n"
+        f"{evidence_text}\n"
+    )
+
+    return combined
+
+
+# ----------------- CLI ENTRYPOINT -----------------
+def main():
+    text = get_llm_recommendation(result)
+    print(text)
 
 
 if __name__ == "__main__":

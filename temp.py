@@ -1,56 +1,27 @@
-import os
-from openai import OpenAI
-from dotenv import load_dotenv
+from main import get_llm_recommendation
 
-def load_input_text(file_path: str) -> str:
-    """Read the entire contents of a text file."""
-    with open(file_path, "r", encoding="utf-8") as f:
-        return f.read()
+info_dict = {
+    'gender':1.0,'age':56.0,'race':2.0,'educ':3.0,'marry':1.0,
+    'house':1.0,'pov':2.15,'wt':96.4,'ht':168.0,'bmi':34.1,
+    'wst':110.5,'hip':112.0,'dia':84.0,'pulse':78.0,'sys':138.0,
+    'alt':42.0,'albumin':4.3,'ast':35.0,'crea':0.98,'chol':205.0,
+    'tyg':230.0,'ggt':48.0,'wbc':7.2,'hb':14.2,'hct':43.0,
+    'ldl':132.0,'hdl':38.0,'acratio':3.1,'glu':182.0,
+    'insulin':18.5,'crp':4.8,'hb1ac':8.6,'mvpa':40.0,
+    'ac_week':0.0,
+    'context':'Middle-aged patient with long-standing type 2 diabetes, obesity, inconsistent follow-up, and limited financial resources. Frequently eats late meals due to shift-based work schedule, with high intake of refined carbohydrates and sugary beverages. Reports chronic knee discomfort limiting high-impact exercise. Demonstrates motivation to prevent future complications but experiences difficulty implementing recommendations without clear, structured steps.',
+    "1week":("mvpa",20.0),
+    "2week":("ac_week",1.0),
+    "3week":("sugary_drinks_per_day",-0.5),
+    "4week":("wst",-1.0),
+    "5week":("glu",-5.0),
+    "6week":("hb1ac",-0.1),
+    "7week":("tyg",-10.0),
+    "8week":("sys",-2.0),
+    "old_score":103.0,
+    "new_score":93.0
+}
 
-def main():
-    # Load .env file so OPENAI_API_KEY becomes available
-    load_dotenv()
+text = get_llm_recommendation(info_dict)
+print(text)
 
-    # 1. Set your file path here
-    input_file = "input/sample1.txt"
-
-    # 2. Load the text that will go into the prompt
-    patient_text = load_input_text(input_file)
-
-    # 3. Initialize OpenAI client (uses OPENAI_API_KEY from env)
-    client = OpenAI()
-
-    # 4. Build a simple prompt
-    system_prompt = (
-        "You are a careful diabetes lifestyle coach. "
-        "You ONLY give lifestyle and behaviour recommendations, "
-        "not medication changes. "
-        "Be realistic, concrete, and supportive."
-    )
-
-    user_prompt = (
-        "Below is the information about a patient and an action plan suggested "
-        "by a reinforcement learning model. "
-        "Using this, write a short, feasible recommendation for the patient.\n\n"
-        f"{patient_text}\n\n"
-        "Now write your recommendation:"
-    )
-
-    # 5. Call the Chat Completions API
-    response = client.chat.completions.create(
-        model="gpt-4.1-mini",
-        messages=[
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_prompt},
-        ],
-        temperature=0.2,
-        max_tokens=400,
-    )
-
-    # 6. Extract and print the model's reply
-    reply = response.choices[0].message.content
-    print("=== MODEL RECOMMENDATION ===")
-    print(reply)
-
-if __name__ == "__main__":
-    main()

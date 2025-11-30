@@ -1,108 +1,2042 @@
-CLINICAL INFO
-# Source: US NHANES 2021–2023-style variables (single patient snapshot)
-
-[Demographics]
-RIAGENDR (Gender): 2  (Female)
-RIDAGEYR (Age, years): 58
-RIDRETH3 (Race/Hispanic origin): 3  (Non-Hispanic White)
-DMDEDUC2 (Education level, adults 20+): 3  (High school graduate/GED)
-DMDMARTZ (Marital status): 1  (Married)
-DMDHHSIZ (Household size): 3
-INDFMPIR (Family income-to-poverty ratio): 1.5
-
-[Anthropometrics & Examination]
-BMXWT (Weight, kg): 92.0
-BMXHT (Standing height, cm): 160.0
-BMXBMI (Body mass index, kg/m2): 35.9
-BMXWAIST (Waist circumference, cm): 108.0
-BMXHIP (Hip circumference, cm): 115.0
-BPXOSY3 (Systolic BP, 3rd reading, mmHg): 148
-BPXODI3 (Diastolic BP, 3rd reading, mmHg): 86
-BPXOPLS3 (Pulse, 3rd reading, bpm): 84
-
-[Laboratory]
-LBXGH (Glycohemoglobin / HbA1c, %): 8.4
-URDACT (Urine albumin-creatinine ratio, mg/g): 130
-LBDHDD (Direct HDL-cholesterol, mg/dL): 38
-LBXWBCSI (WBC count, 1000 cells/µL): 7.2
-LBXHGB (Hemoglobin, g/dL): 13.0
-LBXHCT (Hematocrit, %): 39.0
-LBXSATSI (ALT, IU/L): 42
-LBXSASSI (AST, IU/L): 40
-LBXSAL (Albumin, g/dL): 4.1
-LBXSCR (Serum creatinine, mg/dL): 0.9
-LBXSCH (Total cholesterol, mg/dL): 210
-LBXSTR (Triglycerides, mg/dL): 260
-LBXSGTSI (GGT, IU/L): 55
-LBXIN (Insulin, µU/mL): 24
-LBXHSCRP (High-sensitivity CRP, mg/L): 3.5
-
-[Questionnaire – Smoking, Physical Activity, Alcohol, Health Status]
-SMQ040 (Currently smokes cigarettes?): 3  (Not at all)
-
-PAD790Q (Frequency of moderate LTPA): 2
-PAD790U (Unit for moderate LTPA frequency): 1  (Times per week)
-PAD800  (Minutes of moderate LTPA per session): 20
-
-PAD810Q (Frequency of vigorous LTPA): 0  (None)
-PAD810U (Unit for vigorous LTPA frequency): 0  (Not applicable)
-PAD820  (Minutes of vigorous LTPA per session): 0
-
-# Derived from PAQ: MVPA ≈ 40 minutes/week (moderate only)
-
-ALQ121 (How often drink alcohol in past 12 months): 2  (1–2 times per month)
-ALQ130 (Average # of drinks per drinking day): 1
-
-HUQ010 (General health condition): 3  (Fair)
-HUQ030 (Routine place for health care): 1  (Yes, has a usual place)
-
-Current DBS (diabetes burden score, 0–1): 0.78
+# 5. Facilitating Positive Health Behaviors and Well-being
 
 
-RL ACTION PLAN
-# 5-step sequence of variable edits produced by Actor-Critic policy
-
-Step 1:
-  Variable: MVPA (weekly minutes, derived from PAD790Q/U and PAD800)
-  Baseline value: 40 minutes/week
-  Suggested delta: +30 minutes/week
-  Target value: 70 minutes/week
-
-Step 2:
-  Variable: LBXGH (HbA1c, %)
-  Baseline value: 8.4
-  Suggested delta: -0.7
-  Target value: 7.7
-
-Step 3:
-  Variable: LBXSTR (Triglycerides, mg/dL)
-  Baseline value: 260
-  Suggested delta: -40
-  Target value: 220
-
-Step 4:
-  Variable: BMXBMI (Body mass index, kg/m2)
-  Baseline value: 35.9
-  Suggested delta: -1.5
-  Target value: 34.4
-
-Step 5:
-  Variable: “Sugary_drinks_per_day” (behavioural variable derived from dietary history)
-  Baseline value: 1.5 drinks/day
-  Suggested delta: -1.5
-  Target value: 0 drinks/day
-
-Final DBS after applying all 5 steps (simulated): 0.63
+#### Skip to Main Content
 
 
-PATIENT CONTEXT
-- Mobility: Uses a power wheelchair outside the home because of knee osteoarthritis and neuropathic foot pain. Can stand and pivot for a few minutes with support but cannot walk more than a few steps.
-- Daily routine: Retired; spends most of the day at home watching TV or using a tablet. Sleeps around 6 hours/night with frequent awakenings.
-- Social situation: Lives with spouse; spouse does most of the cooking and grocery shopping. One adult child lives in another city.
-- Financial situation: Household income-to-poverty ratio 1.5; reports needing to “watch food costs” and prefers affordable ingredients and no gym membership.
-- Eating pattern (self-report): Typically eats 2 main meals and 1–2 snacks per day. Drinks about 1–2 sugary sodas most days of the week. Often eats dinner late (after 9 pm).
-- Health beliefs and barriers:
-  - Worries about low blood sugar if she “eats less,” though she has not had documented severe hypoglycemia.
-  - Feels intimidated by the idea of “exercise,” but is open to trying short, chair-based movements if clearly explained.
-  - Rates her overall health as “fair” and is concerned about future kidney problems because of high urine ACR.
-- Healthcare access: Has a usual community health center she visits every 3–4 months. Has a blood pressure monitor at home but does not check regularly.
+## American Diabetes Association Logo
+
+
+## Open Menu
+
+
+#### header search
+
+
+#### search input
+
+
+## Search...
+
+
+#### Search input auto suggest
+
+
+#### filter your search
+
+
+## Diabetes Care
+
+
+## Search
+
+
+## Advanced Search
+
+
+## KOREA UNIV MED CENTER
+
+
+## Sign In
+
+
+## Open Menu
+
+
+## Diabetes Care
+
+
+#### Articles & IssuesOpen Menu
+
+
+## Review Articles
+
+
+#### Info & AboutOpen Menu
+
+
+#### PodcastsOpen Menu
+
+
+#### Submit & ReviewOpen Menu
+
+
+#### SubscribeOpen Menu
+
+
+## Skip Nav Destination
+
+
+## Volume 48, Issue Supplement_1
+
+
+## January 2025
+
+
+#### Diabetes Care Cover Image for Volume 48, Issue Supplement_1
+
+
+## Previous Article
+
+
+## Next Article
+
+
+## Article Contents
+
+
+## Diabetes Self-Management Education and Support
+
+
+## Medical Nutrition Therapy
+
+
+## Physical Activity
+
+
+### Smoking Cessation: Tobacco, E-cigarettes, and Cannabis
+
+
+## Supporting Positive Health Behaviors
+
+
+## Psychosocial Care
+
+
+## References
+
+
+#### Standards of Care| December 09 2024
+
+
+#### 5. Facilitating Positive Health Behaviors and Well-being to Improve Health Outcomes: Standards of Care in Diabetes—2025 Available
+
+
+### American Diabetes Association Professional Practice Committee
+
+
+#### Crossmark: Check for Updates
+
+
+## Diabetes Care 2025;48(Supplement_1):S86–S127
+
+
+#### https://doi.org/10.2337/dc25-S005
+
+
+#### PubMed:
+
+
+#### 39651983
+
+
+## Connected Content
+
+
+#### A correction has been published: Erratum. 5. Facilitating Positive Health Behaviors and Well-being to Improve Health Outcomes: Standards of Care in Diabetes—2025. Diabetes Care 2025;48(Suppl. 1):S86–S127
+
+
+## Split-Screen
+
+
+## Views Icon
+
+
+## Views Open Menu
+
+
+#### Open the
+
+
+#### PDFfor in another window
+
+
+## Share Icon
+
+
+## Share
+
+
+## Cite Icon
+
+
+## Cite
+
+
+## Get Permissions
+
+
+#### The American Diabetes Association (ADA) “Standards of Care in Diabetes” includes the ADA’s current clinical practice recommendations and is intended to provide the components of diabetes care, general treatment goals and guidelines, and tools to evaluate quality of care. Members of the ADA Professional Practice Committee, an interprofessional expert committee, are responsible for updating the Standards of Care annually, or more frequently as warranted. For a detailed description of ADA standards, statements, and reports, as well as the evidence-grading system for ADA’s clinical practice recommendations and a full list of Professional Practice Committee members, please refer to Introduction and Methodology.
+
+
+#### Readers who wish to comment on the Standards of Care are invited to do so at professional.diabetes.org/SOC.
+
+
+#### Building positive health behaviors and maintaining psychological well-being are foundational for achieving diabetes management goals and maximizing quality of life (1,2). Essential to achieving these goals are diabetes self-management education and support (DSMES), medical nutrition therapy (MNT), routine physical activity, adequate quality sleep, support for cessation of tobacco products and vaping, health behavior counseling, and psychosocial care. Following an initial comprehensive health evaluation (see Section 4, “Comprehensive Medical Evaluation and Assessment of Comorbidities”), health care professionals should engage in person-centered collaborative care with people with diabetes (3–6).
+
+
+#### Person-centered collaborative care is guided by shared decision-making in treatment plan selection; facilitating access to medical, behavioral, psychosocial, and technological resources and support; and shared monitoring of agreed-upon diabetes care plans and behavioral goals (7,8). Routine care evaluations should include assessments of medical and behavioral health outcomes, particularly during periods of changes in health and well-being.
+
+
+## Diabetes Self-Management Education and Support
+
+
+## Recommendations
+
+
+### 5.1 All people with diabetes should be advised to participate in developmentally and culturally appropriate diabetes self-management education and support (DSMES) to facilitate informed decision-making, self-care behaviors, problem-solving, and active collaboration with the health care team. A
+
+
+### 5.2 Provide DSMES at diagnosis, annually and/or when not meeting treatment goals, when complicating factors develop (e.g., medical, functional, and psychosocial), and when transitions in life and care occur. E
+
+
+### 5.3 Routinely assess clinical outcomes, health status, and well-being as key goals of DSMES. C
+
+
+### 5.4 Screen for behavioral health concerns at the same critical times as evaluating the need for DSMES and refer to a qualified behavioral health professional if indicated to increase engagement in DSMES. E
+
+
+### 5.5 DSMES should be culturally appropriate and responsive to individual preferences, needs, and values and may be offered in group or individual settings. A Such education and support should be documented and made available to members of the entire diabetes care team. E
+
+
+### 5.6 Consider offering DSMES via telehealth and/or digital interventions as needed to meet individual preferences, address barriers to access, and improve satisfaction. B
+
+
+### 5.7 DSMES can improve outcomes and reduce costs, so reimbursement by third-party payors is recommended. B
+
+
+### 5.8 Identify and address barriers to DSMES that exist at the payor, health system, clinic, health care professional, and individual levels. E
+
+
+### 5.9 Screen for and include social determinants of health in guiding design and delivery of DSMES C with the ultimate goal of health equity across all populations.
+
+
+#### The overall objectives of DSMES are to support informed decision-making, self-care behaviors, problem-solving, and active collaboration with the health care team to improve clinical outcomes, health status, and well-being in a cost-effective manner (2). DSMES services facilitate the knowledge, decision-making, and skills mastery necessary for optimal diabetes self-care and incorporate the needs, goals, and life experiences of the person with diabetes (9). When providing DSMES, health care professionals should consider the individual’s burden of treatment, level of self-efficacy for self-care behaviors, and degree of social and family support.
+
+
+#### Engagement in self-management behaviors and subsequent clinical outcomes, health status, and quality of life, in addition to psychosocial factors affecting the person’s ability to self-manage, should be monitored routinely. A randomized controlled trial (RCT) that evaluated a decision-making education and skill-building program (10) showed that addressing these aims improved health outcomes in a population in need of health care resources. Furthermore, following a DSMES curriculum improves quality of care (11).
+
+
+#### Use of judgmental words is associated with increased feelings of shame and guilt; therefore, health care professionals should consider the impact language has on building therapeutic and productive relationships. Health care professionals should use positive, strength-based words and phrases putting people first (4). Please see Section 4, “Comprehensive Medical Evaluation and Assessment of Comorbidities,” for more on use of language.
+
+
+#### In accordance with the “2022 National Standards for Diabetes Self-Management Education and Support” (here referred to as the National Standards for DSMES) (9), all people with diabetes should participate in developmentally appropriate and culturally sensitive DSMES, as it helps people with diabetes identify and implement effective self-management strategies and coping skills (2). DSMES includes collaborative goal setting that improves empowerment, self-management, and quality of life as the person with diabetes encounters new challenges and as advances in treatment become available (12–14). Moreover, DSMES should be thought of as an ongoing process—not a one-time occurrence. The National Standards for DSMES (9) include delivery of content addressing:
+
+
+#### Pathophysiology of diabetes and treatment options
+
+
+#### Healthy coping
+
+
+#### Healthy eating
+
+
+#### Being active
+
+
+#### Taking medication
+
+
+## Monitoring
+
+
+#### Reducing risk (treating acute and chronic complications)
+
+
+### Problem solving and behavior change strategies
+
+
+#### In addition to providing DSMES upon diagnosis, there are additional critical time points when the need for DSMES should be evaluated by the health care professional and/or interprofessional team, with referrals made as needed (2):
+
+
+#### Annually and/or when not meeting treatment goals, whichever is more frequent
+
+
+#### When complicating factors (e.g., health conditions, physical or functional limitations, emotional factors, and basic living needs) that influence self-management develop
+
+
+#### When transitions in life and care occur
+
+
+#### DSMES empowers individuals with diabetes by providing them with tools to make informed self-management decisions (4). DSMES should be person-centered—placing the person with diabetes and their family and/or support system at the center of the care model as they work in collaboration with health care professionals. Person-centered care is respectful of and responsive to individual and cultural preferences, needs, and values. It ensures the values of the person with diabetes guide all decision-making (15).
+
+
+#### Evidence for the Benefits
+
+
+#### DSMES is associated with improved diabetes knowledge and self-care behaviors (16,17), lower A1C (16–21), lower self-reported weight (22), improved quality of life (23,24), reduced all-cause mortality risk (25), positive coping behaviors (5,26), and lower health care costs (27–29). DSMES is also associated with an increased use of primary care and preventive services (27,30) and less frequent use of acute care and inpatient hospital services (22). People with diabetes who participate in DSMES are more likely to follow best practice treatment recommendations, particularly those with Medicare, and have lower Medicare and insurance claim costs (28,30).
+
+
+#### Better outcomes were reported for DSMES interventions that were >10 h over the course of 6–12 months (19), included ongoing support (12,13,31), were culturally (30,32–34) and age appropriate (35,36), were tailored to individual needs and preferences, addressed psychosocial issues, and incorporated behavioral strategies (4,26,37,38). Individual and group approaches are effective (22,39,40), with a slight benefit realized by those who engage in both (19).
+
+
+#### Strong evidence now exists for the benefits of telehealth, telemedicine, and telephone-based or internet-based (i.e., virtual) DSMES for diabetes prevention and management in a wide variety of populations and age-groups (9,41–44). When feasible, the best choice for delivery of DSMES is that which will align with individual preferences. A 2023 systematic review and meta-analysis of RCTs reported moderate evidence indicating digital health technologies (e.g., mobile apps, websites, digital coaching, and SMS [i.e., texting]) can be effective modes of intervention delivery for DSMES. In fact, telehealth-based interventions have been found to produce a greater reduction in A1C (−0.30 percentage points; 95% CI −0.42 to −0.19) compared with control (43,45).
+
+
+#### These digital methods provide outcomes that are comparable to or even better than those seen with traditional in-person care (46). Greater A1C reductions are demonstrated with increased engagement (47), although data from trials are heterogeneous.
+
+
+#### Diabetes care and education specialists (DCES) are effective providers of DSMES. Members of the DSMES team can include a variety of health care professionals such as nurses (registered nurses and nurse practitioners), registered dietitian nutritionists (RDNs), pharmacists, social workers, certified health education specialists, exercise physiologists, care coordinators or navigators, and others who can tailor curricula to individual needs (48–50). Team members acting in the DCES capacity should have specialized clinical knowledge of diabetes and behavior change principles. In addition, a DCES needs to be knowledgeable about technology-enabled services and may serve as a technology champion within their practice (51).
+
+
+#### Credentialing such as certified diabetes care and education specialists (CDCES) (cbdce.org/) and/or board certification in advanced diabetes management (BC-ADM) (diabeteseducator.org/education/certification/bc_adm) demonstrates an individual’s specialized training in and understanding of diabetes management and support (9), and engagement with qualified professionals has been shown to improve diabetes-related outcomes (52). There is also continued and growing evidence for the role of community health workers, peer educators, peer support, and lay leaders in providing ongoing diabetes self-management support (53,54).
+
+
+#### Social determinants of health (SDOH) are an important aspect of diabetes care and should always be weighed in guiding the design and delivery of DSMES. The DSMES team should consider demographic characteristics such as racial identity, ethnic and cultural background, biological sex and gender identity, age, geographic location, technology access, education, literacy, and numeracy (4). For example, a systematic review and meta-analysis of telehealth DSMES interventions with Black and Hispanic adults with diabetes showed a 0.465% decrease in A1C, demonstrating the importance of considering demographic factors in relation to DSMES interventions (44).
+
+
+#### Barriers to equitable DSMES access can be mitigated by keeping in mind the SDOH and leveraging creative delivery options (e.g., telehealth and online) that will work best for the population in need of DSMES (9).
+
+
+#### Despite the recognized benefits of DSMES, only about half of individuals eligible for DSMES through their health insurance receive it (55). Barriers to DSMES exist at multiple levels including the health system, payor, clinic, health care professional, and individual for a myriad of reasons from lack of administrative leadership support to ineffective DSMES referral processes and transportation challenges. Low participation can be due to lack of referrals, logistical issues (e.g., accessibility, timing, and costs), and lack of a perceived benefit (56). Thus, in addition to educating referring health care professionals about the benefits of DSMES and the critical times to refer, efforts to identify and address potential barriers at all levels need to be made (2).
+
+
+#### This was illustrated in a multilevel diabetes care intervention that combined clinical outreach, standardized protocols, and DSMES with SDOH screening and referrals to social needs support; a 15% increase in receipt of DSMES, including among people on Medicaid, was documented (57). Support from institutional leadership is foundational for DSMES success. Expert stakeholders, including those external to an organization, should also support DSMES by advocating for it and for people with diabetes (9).
+
+
+## Diabetes Technologies
+
+
+#### Technology-enabled diabetes self-management solutions (e.g., continuous glucose monitors [CGM], closed-loop pump systems, and connected glucose meters) improve A1C most effectively when there is two-way communication between the person with diabetes and the health care team, individualized feedback, use of person-generated health data, and education (58). Alternative and innovative models of DSMES delivery (59), including integration of technology-enabled diabetes and cardiometabolic health services (8), need to be continually explored and evaluated. Technology can facilitate self-management decisions and improve access to DSMES (58). Additionally, use of diabetes technologies warrants broader adoption because they can reduce therapeutic inertia (60).
+
+
+#### One potential model is virtual environments, which allow people with diabetes to self-represent as avatars and interact in a world with embedded informational resources that can be accessed using principles of gamification. An RCT that tested DSMES in a virtual environment demonstrated greater weight loss but similar decreases in A1C, blood pressure, cholesterol, and triglycerides compared with DSMES via a standard website (61). These versions may not always be reimbursed; however, adoption of reimbursement policies that increase DSMES access and use will positively affect beneficiaries’ clinical outcomes, quality of life, health care use, and costs (9,62,63).
+
+
+#### Of all the newer diabetes technologies, CGM might be the most widely adopted. When combined with individualized DSMES or behavioral interventions, CGM demonstrated greater improvement of glycemic and psychosocial outcomes than CGM alone (47,64). Similarly, DSMES plus intermittently scanned CGM (isCGM) demonstrated increased time in range (70–180 mg/dL [3.9–10.0 mmol/L]), less time above range, and greater reduction in A1C compared with DSMES alone (65). Incorporating a systematic approach for technology assessment, adoption, and integration into the diabetes care plan could help ensure equity in access and standardized application of technology-enabled solutions (8,51,66–68).
+
+
+## Reimbursement
+
+
+#### Medicare reimburses DSMES (referred to as diabetes self-management training [DSMT] by Medicare) when the service is in accordance with the National Standards for DSMES (2,9) and is recognized by the American Diabetes Association (ADA) through the Education Recognition Program (professional.diabetes.org/diabetes-education) or by the Association of Diabetes Care & Education Specialists (www.adces.org/store/online-education/unlisted-detail/becoming-an-accredited-dsmes-program). DSMES is also covered by most other health insurance plans. Ongoing support has been shown to be instrumental for improving outcomes when it is implemented after the completion of formal DSMES.
+
+
+#### For comprehensive information about Medicare reimbursement, readers may find the following website useful: www.cdc.gov/diabetes-toolkit/php/reimbursement/medicare-reimbursement-guidelines.html. In brief, the Medicare Part B initial DSMT is a “once-in-a-lifetime” benefit. Individual encounters are reimbursable for the first 10 h (1 h of individual training and 9 h of group training). Two hours of follow-up DSMT are allowed each year after the initial DSMT. If a person has special needs that would interfere with effective group participation, these should be identified on the referral order. For Medicaid, DSMES coverage varies by state, but further guidance can be found at www.cdc.gov/diabetes-toolkit/php/reimbursement/medicare-reimbursement-guidelines.html.
+
+
+#### Additional information addressing implementation of a successful DSMES program can be found in the Centers for Disease Control and Prevention DSMES toolkit at www.cdc.gov/diabetes-toolkit/php/index.html.
+
+
+#### Programs recognized by the ADA and accredited by the Association of Diabetes Care & Education Specialists are currently included on the list of telehealth professionals approved by Centers for Medicare & Medicaid Services (CMS), via the Consolidated Appropriations Act of 2023 (69). Continuation of reimbursement for DSMES telehealth services is expected through the end of 2025, after which CMS is likely to reinstate limitations on the number of times certain services in high-acuity settings may be performed via telehealth. During this time, CMS will continue to evaluate whether the removal of these frequency limitations should be made permanent (70).
+
+
+#### DSMES uses an evidence-based curriculum designed to educate people with diabetes about all elements from the National Standards for DSMES, as described above, that can be delivered and billed by a variety of health care professionals on the diabetes care team. While the overarching healthy eating concepts used in DSMES can be taught by all members of the team, MNT, which is more in-depth and individualized and derived from the evidence-based Nutrition Care Process, can only be delivered and billed by RDNs. For Medicare Part B, the MNT benefit includes individual encounters reimbursable for 3 h. Each subsequent year is reimbursed for 2 h. However, additional hours are available if a subsequent referral identifies a change in treatment.
+
+
+#### For further information on Medicare coverage of MNT, readers are encouraged to review www.cdc.gov/diabetes-toolkit/php/reimbursement/medical-nutrition-therapy.html and www.cms.gov/medicare-coverage-database/view/ncacal-decision-memo.aspx?proposed=N&NCAId=53.
+
+
+## Medical Nutrition Therapy
+
+
+#### When the first ADA Standards of Care guidelines were published in 1989, nutrition was only mentioned in two sentences of the entire 4-page document (71). Even today, the science of nutrition for diabetes continues to evolve. There has also been a change in how we talk about nutrition. We are moving away from emphasizing macronutrients, which include carbohydrates, proteins, and fats, and micronutrients, which include vitamins and minerals, and instead focusing on foods. More broadly, we are encouraging people to think in terms of eating patterns, also known as dietary patterns or food patterns, or the totality of the foods and beverages a person consumes.
+
+
+#### Additionally, promoting nutrient-dense food choices, defined as foods high in micronutrients while being relatively low in calories (e.g., vegetables, fruits, and legumes), is useful. This integrative food-based approach aligns with the 2021 American Heart Association dietary guidance to improve cardiovascular health (72), the Kidney Disease: Improving Global Outcomes (KDIGO) guidelines (73), the European Association for the Study of Diabetes and ADA type 1 consensus report (74) and type 2 consensus report (75), and the Dietary Guidelines for Americans, 2020–2025 (76). Simply put, people eat food, not nutrients, and nutrition recommendations need to be applicable to what people actually eat.
+
+
+#### Additionally, macronutrients are not interchangeable entities and vary by nutrient type and quality. As an example, carbohydrates include legumes, whole grains, and fruits, which are in the same category as refined grains, but their health effects are quite different (77).
+
+
+#### MNT is effective and beneficial to people with diabetes. When delivered by an RDN, MNT is associated with A1C absolute decreases of 1.0–1.9% for people with type 1 diabetes and 0.3–2.0% for people with type 2 diabetes (78). Because type 2 diabetes is progressive, behavior modification alone may not be adequate to maintain euglycemia over time. However, after pharmacotherapy is initiated, nutrition therapy continues to be an important component of ongoing diabetes self-management, and RDNs providing diabetes-specific MNT should assess and monitor medication changes in relation to the nutrition care plan (50,79).
+
+
+#### All members of the health care team should also be empowered to reiterate the general and evidence-based nutrition advice to limit processed foods and foods high in added salt, sugars, and fats and, when possible, choose whole foods.
+
+
+#### For more detailed information on nutrition therapy, please refer to the ADA consensus report on nutrition therapy (50). Contained in the report is an important and often repeated tenet, i.e., there is no one-size-fits-all eating pattern for individuals with diabetes, and meal planning should be individualized. Nutrition therapy plays an integral role in overall diabetes management, and each person with diabetes should actively engage in education, self-management, and treatment planning with the health care team and participate in collaborative development of an individualized eating plan (50,79).
+
+
+#### All health care professionals should refer people with diabetes for individualized MNT provided by an RDN who is experienced and skilled in providing diabetes-specific MNT (80–82), at diagnosis and as needed throughout the life span, similar to DSMES. Referrals to RDNs are particularly warranted when a person with diabetes is dealing with additional health conditions such as hypertension, dyslipidemia, heart failure, gastrointestinal disorders, chronic kidney disease, pregnancy-related nutrition concerns, pediatric growth issues, or obesity (83). See Table 5.1 for general nutrition recommendations, Table 5.2 for macronutrient-specific recommendations, and Table 5.3 for nutrition behaviors that should be encouraged.
+
+
+## Table 5.1Nutrition therapy recommendations
+
+
+## Recommendations
+
+
+### Provide medical nutrition therapy 	5.10 An individualized medical nutrition therapy program,
+
+
+#### as needed to achieve treatment goals and provided by a registered
+
+
+### dietitian nutritionist, preferably one who has comprehensive
+
+
+#### knowledge and experience in diabetes care, is recommended for
+
+
+#### all people with type 1 or type 2 diabetes, prediabetes, and gestational
+
+
+#### diabetes mellitus. A
+
+
+### 5.11 Because diabetes medical nutrition therapy can result in cost savings B
+
+
+### and improved cardiometabolic outcomes, A medical nutrition
+
+
+#### therapy should be adequately reimbursed by insurance. E
+
+
+#### Promote energy balance 	5.12 Provide weight management treatment based on nutrition, physical activity,
+
+
+### and behavioral therapy for all people with overweight or obesity, aiming
+
+
+#### for at least 3–7% weight loss. A
+
+
+#### Encourage healthy, evidence-based
+
+
+#### eating patterns 	5.13 For diabetes prevention and management of people with prediabetes
+
+
+#### or diabetes, recommend individualized meal plans that keep nutrient quality, total
+
+
+#### calories, and metabolic goals in mind, B as data do not
+
+
+#### support a specific macronutrient pattern.
+
+
+### 5.14 Eating patterns should emphasize key nutrition principles
+
+
+#### (inclusion of nonstarchy vegetables, whole fruits, legumes, lean proteins,
+
+
+#### whole grains, nuts and seeds, and low-fat dairy or nondairy alternatives) and
+
+
+#### minimize consumption of red meat, sugar-sweetened beverages, sweets,
+
+
+#### refined grains, processed and ultraprocessed foods in people
+
+
+#### with prediabetes and diabetes. B
+
+
+### 5.15 Consider reducing overall carbohydrate intake for adults with
+
+
+#### diabetes to improve glycemia, as this approach may be applied to a
+
+
+#### variety of eating patterns that meet individual needs
+
+
+#### and preferences. B
+
+
+#### Do not promote the use of
+
+
+#### micronutrient, herbal, and
+
+
+#### other supplements to
+
+
+#### aid in glycemic management 	5.16 Health care professionals should inquire about intake of dietary
+
+
+#### supplements and counsel as necessary. Supplementation with
+
+
+#### micronutrients (e.g., vitamins and minerals, such as magnesium or chromium)
+
+
+#### or herbs or spices (e.g., cinnamon and aloe vera) for glycemic
+
+
+#### benefits is not recommended. C
+
+
+### 5.17 Counsel against β-carotene supplementation,
+
+
+#### as there is evidence of harm for certain individuals and
+
+
+#### it confers no benefit. B
+
+
+#### Avoid excess alcohol intake 	5.18 Advise adults with diabetes and those at risk for diabetes who
+
+
+#### consume alcohol to not exceed the recommended daily limits.
+
+
+#### B Advise abstainers to not start drinking alcohol, even in moderation.
+
+
+### 5.19 Educate people with diabetes about the signs, symptoms, and
+
+
+### self-management of delayed hypoglycemia after drinking alcohol,
+
+
+#### especially when using insulin or insulin secretagogues.
+
+
+#### The importance of monitoring glucose after drinking alcoholic beverages to reduce
+
+
+#### hypoglycemia risk should be emphasized. B
+
+
+#### Limit sodium and foods high in salt 	5.20 Counsel people with diabetes to limit sodium consumption to
+
+
+#### <2,300 mg/day, as clinically appropriate, B and that the best way to
+
+
+#### achieve this is through limiting consumption of processed foods. B
+
+
+#### Recommend water over other beverages 	5.21 Counsel people with prediabetes and diabetes that water is
+
+
+#### recommended over nutritive and nonnutritive sweetened beverages. A
+
+
+### 5.22 Counsel people with diabetes and those at risk for diabetes
+
+
+#### that nonnutritive sweeteners can be used instead of sugar-sweetened
+
+
+#### products if consumed in moderation and for the short term
+
+
+#### to reduce overall calorie and carbohydrate intake. B
+
+
+#### Screen for malnutrition 	5.23 Screen people with diabetes and those at risk for diabetes
+
+
+### for malnutrition, especially those who have undergone metabolic surgery
+
+
+#### A and those being treated with weight loss pharmacologic therapies. B
+
+
+## Table 5.2Macronutrient-specific nutrition recommendations
+
+
+## Recommendations
+
+
+#### Carbohydrates 	5.24 Emphasize minimally processed, nutrient-dense,
+
+
+#### high-fiber sources of carbohydrate (at least 14 g fiber per 1,000 kcal). B
+
+
+### 5.25 Advise people with diabetes and those at risk to replace sugar-sweetened
+
+
+#### beverages (including fruit juices) with water or low-calorie or no-calorie beverages
+
+
+#### as much as possible to manage glycemia and reduce risk for cardiometabolic disease B
+
+
+#### and minimize consumption of foods with added sugar that have the capacity to displace healthier,
+
+
+#### more nutrient-dense food choices. A
+
+
+### 5.26 Regardless of diabetes classification, individuals treated with sodium–glucose
+
+
+#### cotransporter 2 inhibitors should avoid a ketogenic eating pattern, be educated on the signs of ketoacidosis
+
+
+#### and methods of risk mitigation and provided with appropriate tools
+
+
+#### for accurate ketone measurement (i.e., serum β-hydroxybutyrate),
+
+
+#### and be instructed to avoid fasting and maintain appropriate insulin therapy. E
+
+
+### 5.27 Provide education on the glycemic impact of carbohydrate,
+
+
+#### A fat, and protein B tailored to an individual’s needs, insulin plan, and
+
+
+#### preferences to optimize mealtime insulin dosing.
+
+
+### 5.28 When using fixed insulin doses, individuals should be provided with education
+
+
+#### about consistent patterns of carbohydrate intake with
+
+
+#### respect to time and amount while considering the insulin action time,
+
+
+#### as it can result in improved glycemia and reduce the risk for hypoglycemia. B
+
+
+#### Proteins 	5.29 People with diabetes and those at risk for diabetes are advised to incorporate
+
+
+#### more plant-based protein sources (e.g., nuts, seeds, and legumes) as part of an overall diverse eating
+
+
+#### pattern to reduce cardiovascular disease risk. B
+
+
+### 5.30 Counsel people with diabetes to consider an eating plan emphasizing elements of a
+
+
+#### Mediterranean eating pattern, which is rich in monounsaturated and polyunsaturated fats
+
+
+#### and long-chain fatty acids such as fatty fish, nuts, and seeds, to reduce cardiovascular
+
+
+#### disease risk A and improve glucose metabolism. B
+
+
+#### Fats 	5.31 Counsel people with diabetes and those at risk for diabetes to limit
+
+
+#### intake of foods high in saturated fat (e.g., red meat, full-fat dairy, butter, and coconut oil) to
+
+
+#### help reduce cardiovascular disease risk. A
+
+
+## Table 5.3Nutrition behaviors to encourage
+
+
+#### • Vegetables—especially nonstarchy vegetables that are dark green, red, and orange in color; fresh, frozen, or low-sodium canned are all acceptable vegetable options.
+
+
+#### • Legumes—dried beans, peas, and lentils.
+
+
+#### • Fruits—especially whole fruit—fresh, frozen, or canned in own juice (or no added sugar) are all acceptable fruit options.
+
+
+#### • Whole-grain foods—where culturally appropriate, whole-grain versions of commonly consumed foods such as 100% whole-wheat breads or pastas, and brown rice. When not culturally appropriate, focus more on portion control.
+
+
+#### • Foods with at least 3 g of fiber per serving, which generally indicates a food higher in fiber.
+
+
+#### • Water should be the primary beverage of choice.
+
+
+#### • For individuals who do not prefer plain water, no-calorie alternatives are the next best choice. Options include adding lemon, lime, or cucumber slices to water; sparkling no-calorie water or flavored no-calorie waters; no-calorie carbonated beverages, etc.
+
+
+#### • Plant-based proteins can include legumes (e.g., soybeans, pinto beans, black beans, garbanzo beans, dried peas, and lentils), nuts, and seeds.
+
+
+#### • Meats and poultry should be from fresh, frozen, or low-sodium canned and in lean forms (e.g., chicken breast and ground turkey).
+
+
+#### • Heart-healthy wild-caught fatty fish such as salmon, tuna, sardines, and mackerel. Fresh, frozen, or low-sodium canned are all acceptable options.
+
+
+#### • Use herbs (e.g., basil, fennel, mint, parsley, rosemary, and thyme) and spices (e.g., cinnamon, garam masala, ginger, pepper, and turmeric) to season foods instead of salt or salt-containing preparations.
+
+
+#### • Incorporate onions, garlic, celery, carrots, and other vegetables as a base for preparing various homemade foods.
+
+
+#### • Cook with vegetable oil (e.g., canola and olive) in place of fats high in saturated fat (e.g., butter, shortening, lard, and coconut oil).
+
+
+#### • Meal prep by planning out meals for the week, grocery shopping with a list, and cooking on a day off so there are ready-to-eat and ready-to-reheat homemade meals waiting in the fridge or freezer.
+
+
+#### • Include family or roommates in meal preparation; share the responsibilities of grocery shopping and cooking.
+
+
+#### Eating Patterns and Meal Planning
+
+
+#### For an understanding of the role of nutrition in diabetes, it is important to clarify the terminology. Food patterns, eating plans, and approaches are terms that are often used interchangeably, but they are different and relevant in individualizing nutrition care plans (84).
+
+
+#### Eating pattern, dietary pattern, or food pattern. The totality of all foods and beverages consumed over a given period of time. An eating pattern can be ascribed to an individual, but it is also the term used in prospective cohort and observational nutrition studies to classify and study nutrition patterns. Examples of eating patterns include Mediterranean style, Dietary Approaches to Stop Hypertension (DASH), low carbohydrate, vegetarian, and plant based (84).
+
+
+#### Eating/meal plan (historically referred to as a diet). An individualized guide to plan when, what, and how much to eat on a daily basis, completed by the person with diabetes and the RDN. The eating plan could incorporate an eating pattern combined with a strategy or method to direct some of the choices. Eating plans are based on the individual’s usual eating style and food preferences.
+
+
+#### Eating/meal plan approach. Method or strategy to individualize a desired eating pattern and provide practical tools for developing healthy eating patterns. Examples of dietary approaches include the plate method, carbohydrate choice, carbohydrate counting, and highly individualized behavioral approaches (85).
+
+
+## Meal Planning
+
+
+#### There is no ideal percentage of calories from carbohydrate, protein, or fat for people with diabetes. Therefore, macronutrient distribution should be based on an individualized assessment of current eating patterns, preferences, and metabolic goals. Members of the health care team should complement and reinforce MNT by providing evidence-based guidance that helps people with diabetes make healthy food choices that meet their individualized needs and improve overall health. Ultimately, ongoing diabetes and nutrition education paired with appropriate support to implement and sustain health behaviors are recommended (82).
+
+
+#### Research confirms that a variety of eating patterns are acceptable for the management of diabetes (50,78,86,87). Evidence for eating patterns has been informed by RCTs, prospective cohort studies, systematic reviews, and network meta-analyses. Those most frequently recommended based on the evidence include Mediterranean, DASH, low-fat, carbohydrate-restricted, vegetarian, and vegan eating patterns.
+
+
+#### Until evidence around benefits of different eating patterns is strengthened, health care professionals should focus on the core dimensions common among healthful patterns: inclusion of nonstarchy vegetables, whole fruits, legumes, whole grains, nuts, seeds, and low-fat dairy products and minimizing consumption of red meat, sugar-sweetened beverages, sweets, refined grains, and processed and ultraprocessed foods (88,89).
+
+
+#### Referral to and ongoing support from an RDN is essential to assess the overall nutrition status of, and to work collaboratively with, the person with diabetes to create a personalized meal plan that coordinates and aligns with the overall lifestyle treatment plan, including physical activity and medication use. Using shared decision-making to collaboratively select a method for how to execute the plan may be part of the nutrition care process.
+
+
+#### Eating/Meal Plan Approaches and Methods
+
+
+#### Few head-to-head studies have compared different eating approaches. In a systematic review and meta-analysis of carbohydrate counting versus other forms of meal planning advice (e.g., standard education, low glycemic index, and fixed carbohydrate quantities), no significant differences were seen in A1C levels compared with standard education (90). In another RCT, a simplified carbohydrate counting tool based on individual glycemic response was noninferior to conventional carbohydrate counting in 85 adults with type 1 diabetes (91). In a randomized crossover trial, carbohydrate counting and qualitative meal size (i.e., low, medium, and high carbohydrate) were compared. Time in range was 74% for carbohydrate counting and 70.5% for the quantitative meal size estimates.
+
+
+#### Noninferiority was not confirmed for the qualitative method (92). Newer technologies (e.g., smart phone apps and CGM) and automated insulin delivery may decrease the need for precise carbohydrate counting and allow for personalized nutrition approaches (93,94).
+
+
+#### One RCT found that two meal-planning approaches (diabetes plate method and carbohydrate counting) were effective in helping achieve improved A1C (95). The diabetes plate method (96) is a commonly used visual approach for providing basic meal planning guidance for individuals with type 1 and type 2 diabetes. This simple graphic (featuring a 9-in plate) shows how to portion foods (one-half of the plate for nonstarchy vegetables, one-quarter of the plate for protein, and one-quarter of the plate for carbohydrates). Carbohydrate counting is a more advanced skill that helps plan for and track how much carbohydrate is consumed at meals and snacks. Meal planning approaches should be customized to the individual, including their numeracy (95) and food literacy level.
+
+
+#### Health numeracy refers to understanding and using numbers and numerical concepts in relation to health and self-management. Food literacy generally describes proficiency in food-related knowledge and skills that ultimately affect health, although specific definitions vary across initiatives (97,98).
+
+
+### Nutrition Therapy Goals for All People With Diabetes
+
+
+#### To promote and support healthful eating patterns, emphasizing a variety of nutrient-dense foods in appropriate portion sizes, contributing to improved overall health, and to:
+
+
+#### achieve and maintain body weight goals
+
+
+#### attain individualized glycemic, blood pressure, and lipid goals
+
+
+#### delay or prevent the complications of diabetes
+
+
+#### To address individual nutrition needs based on personal and cultural preferences, health literacy and numeracy, access to healthful foods, willingness and ability to make behavioral changes, and existing barriers to change
+
+
+#### To maintain the pleasure of eating by providing nonjudgmental messages about food choices while also reducing or limiting certain foods only when indicated by scientific evidence
+
+
+#### To provide an individual with diabetes the practical tools for developing healthy eating patterns rather than focusing on individual macronutrients, micronutrients, or single foods
+
+
+## Carbohydrates
+
+
+#### Studies examining the optimal amount of carbohydrate intake for people with diabetes are inconclusive, although monitoring carbohydrate intake is a key strategy in reaching glucose goals in people with type 1 and type 2 diabetes (99,100).
+
+
+#### For people with type 2 diabetes, low-carbohydrate and very-low-carbohydrate eating patterns have been found to reduce A1C and the need for glucose-lowering medications (84,101–103). Systematic reviews and meta-analyses of RCTs found carbohydrate-restricted eating patterns, particularly those considered very low carbohydrate (<26% total energy), were effective in reducing A1C in the short term (<6 months), with less difference in eating patterns beyond 1 year (84,104,105).
+
+
+#### However, in a 2022 carefully designed 12-week RCT feeding study among adults with prediabetes and type 2 diabetes, a well-formulated ketogenic diet (20–50 g/day and keeping protein to ∼1.5 g/kg ideal body weight/day, with the remainder of energy from fat) did not significantly improve A1C and increased LDL cholesterol compared with a low-carbohydrate Mediterranean diet (105). Therefore, questions still remain about the optimal degree of carbohydrate restriction and long-term effects of those meal patterns on cardiovascular disease (CVD).
+
+
+#### The effects of changes in body weight and the wide range of definitions for a low-carbohydrate eating plan are important challenges in interpreting carbohydrate-restricted research studies (106). Weight reduction is often a goal in many studies on low-carbohydrate eating plans, which complicates evaluating the distinct contribution of the eating pattern (107–109). As studies on low-carbohydrate eating plans generally indicate challenges with long-term sustainability (101), it is important to reassess and individualize meal plan guidance regularly for those interested in this approach.
+
+
+#### Health care professionals should maintain consistent medical oversight of individuals following very-low-carbohydrate eating plans and recognize that insulin and other diabetes medications may need to be adjusted to prevent hypoglycemia, and blood pressure will need to be monitored. In addition, very-low-carbohydrate eating plans are not currently recommended for individuals who are pregnant or lactating, children, people who have kidney disease, or people with or at risk for disordered eating.
+
+
+#### Very-low-carbohydrate eating plans should also be used with caution in those taking sodium–glucose cotransporter 2 (SGLT2) inhibitors because of the potential risk of ketoacidosis (110,111). Numerous case reports have now been published illustrating that diabetic ketoacidosis (DKA) or euglycemic DKA can occur in people with type 1 and type 2 diabetes using SGLT2 inhibitors in combination with very-low-carbohydrate or ketogenic eating patterns. Additionally, excessive alcohol intake should be avoided when taking SGLT2 inhibitors (110).
+
+
+#### Regardless of the amount of carbohydrate in the meal plan, focus should be placed on high-quality, minimally processed, nutrient-dense carbohydrate sources high in fiber. Dietary fiber modulates gut microbiota composition and increases gut microbial diversity. Although there is still much to be elucidated about the gut microbiome and chronic disease, higher-fiber diets are advantageous (112). Both children and adults with diabetes are encouraged to minimize intake of refined carbohydrates with added sugars, fat, and sodium and instead focus on carbohydrates from vegetables, legumes, fruits, dairy (milk and yogurt) or fortified nondairy alternatives, and whole grains.
+
+
+#### People with diabetes and those at risk for diabetes are encouraged to consume a minimum of 14 g of fiber/1,000 kcal, with at least half of grain consumption being whole, intact grains, according to the Dietary Guidelines for Americans, 2020–2025 (76). Regular intake of sufficient dietary fiber is associated with lower all-cause mortality in people with diabetes, and prospective cohort studies have found dietary fiber intake is inversely associated with risk for type 2 diabetes (113,114). The consumption of sugar-sweetened beverages and processed food products with large amounts of refined grains and added sugars is strongly discouraged (76), as these have the capacity to displace healthier, more nutrient-dense food choices and increase inflammation (115).
+
+
+#### The literature concerning glycemic index and glycemic load in individuals with diabetes is complex, often with varying definitions of low– and high–glycemic index foods (116–118). The glycemic index ranks carbohydrate foods on their postprandial glycemic response, and glycemic load considers both the glycemic index of foods and the amount of carbohydrate eaten. Studies have found mixed results regarding the effect of glycemic index and glycemic load on fasting glucose levels and A1C, with one systematic review finding no significant effect on A1C (117) while others demonstrated A1C reductions of 0.15% (116) to 0.5% (106,119).
+
+
+#### More recently, however, a meta-analysis of large cohorts (≥100,000 participants) reported that when people had larger intakes of high glycemic index foods, there was increased incidence of type 2 diabetes (risk ratio 1.27 [95% CI 1.21–1.34]; P < 0.0001), total CVD (1.15 [1.11–1.19]; P < 0.0001), diabetes-related cancer (1.05 [1.02–1.08]; P = 0.0010), and all-cause mortality (1.08 [1.05–1.12]; P < 0.0001) (118). It is important to note that “low glycemic index” or “low glycemic load” is synonymous with high-fiber eating patterns.
+
+
+#### Individuals with type 1 or type 2 diabetes taking insulin at mealtime should be offered comprehensive and ongoing education about nutrition content and the need to couple insulin administration with carbohydrate intake. For people whose meal schedule or carbohydrate consumption is variable, regular education to increase understanding of the relationship between carbohydrate intake and insulin needs is important. In addition, education on using insulin-to-carbohydrate ratios for meal planning can assist individuals with effectively modifying insulin dosing from meal to meal to improve glycemic management (78,99). Consumption of fat and protein can affect early and delayed postprandial glycemia (120), and it appears to have a dose-dependent response (121,122).
+
+
+#### Results from high-fat, high-protein feeding studies highlight the need for additional insulin to cover these meals; however, more research is needed to determine the optimal insulin dose and delivery strategy. Results from these studies also point to individual differences in postprandial glycemic response; therefore, a cautious approach to increasing insulin doses for high-fat and/or high-protein mixed meals is recommended to address delayed hyperglycemia that may occur after eating (50,123). For individuals using an insulin pump, a split bolus feature (part of the bolus delivered immediately and the remainder over a programmed duration of time) may provide better insulin coverage for high-fat and/or high-protein mixed meals (124,125).
+
+
+#### Insulin dosing decisions should be confirmed with a structured approach to blood glucose monitoring or CGM to evaluate individual responses and guide insulin dose adjustments. Checking glucose 3 h after eating may help determine if additional insulin adjustments are required (i.e., increasing or stopping bolus) (124,125). Adjusting insulin doses to account for high-fat and/or high-protein meals requires determination of anticipated nutrient intake to calculate the mealtime dose. Food literacy, numeracy, interest, and capability should be evaluated. For individuals on a fixed daily insulin schedule, meal planning should emphasize a relatively fixed carbohydrate consumption pattern with respect to both time and amount while considering insulin action.
+
+
+#### Attention to hunger and satiety cues will also help with nutrient modifications throughout the day (50). Most commercially available automated insulin delivery systems still require basic diabetes management skills, including carbohydrate counting and understanding of the effect of protein and fat on postprandial glucose response (126).
+
+
+## Protein
+
+
+#### There is no evidence that adjusting the daily protein intake above or below the recommended amount for the general public (typically 0.8–1.5 g/kg body weight/day or 15–20% of total calories) will improve health, and research is inconclusive regarding the ideal amount of dietary protein to optimize either glycemic management or CVD risk (76,127). Therefore, protein intake goals should be individualized based on current eating patterns. Some research has found successful management of type 2 diabetes with meal plans including slightly higher levels of protein (20–30%), which may contribute to increased satiety (128).
+
+
+#### Historically, low-protein eating plans were advised for individuals with diabetes-related chronic kidney disease (CKD) (with albuminuria and/or reduced estimated glomerular filtration rate [eGFR]); however, current evidence does not suggest that people with CKD need to restrict protein to less than the generally recommended protein intake (129). Reducing the amount of dietary protein below the recommended daily allowance of 0.8 g/kg is not recommended because it does not alter glycemic measures, cardiovascular risk measures, or the rate at which eGFR declines and may increase risk for malnutrition (129).
+
+
+#### Growing evidence suggests higher plant protein intake and replacement of animal protein with plant protein is associated with lower risk of all-cause and cardiovascular mortality. A meta-analysis of 13 RCTs showed that replacing animal proteins with plant proteins leads to small improvements in A1C and fasting glucose in adults with type 2 diabetes (130). A 2023 systematic review and meta-analysis of 13 RCTs and 7 cohort studies concluded that there is limited-suggestive evidence to support replacing animal protein with plant-based protein based on a moderate degree of bias in cohort studies (131).
+
+
+#### However, a prospective observational study of more than 11,000 community-dwelling adults over 22 years of follow-up reported that those with higher intakes of plant foods and lower intakes of animal foods had lower diabetes risk (132). Plant proteins are lower in saturated fat, higher in fiber, and also support planetary health (133).
+
+
+## Fats
+
+
+#### There is no optimal percentage of calories from fat for people with or at risk for diabetes, and macronutrient distribution should be individualized according to the individual’s eating patterns, preferences, and metabolic goals (50). The type of fats consumed is more important than total amount of fat when looking at metabolic goals and CVD risk, and the percentage of total calories from saturated fats should be limited (76,134–136). Multiple RCTs including people with type 2 diabetes have reported that a Mediterranean eating pattern can improve both glycemic management and blood lipids (137–139). The Mediterranean eating pattern is based on the traditional eating habits in the countries bordering the Mediterranean Sea.
+
+
+#### Although eating styles vary by country and culture, they share a number of common features, including consumption of fresh fruits and vegetables, whole grains, beans, and nuts/seeds; olive oil as the primary fat source; low to moderate amounts of fish, eggs, and poultry; and limited added sugars, sugary beverages, sodium, highly processed foods, refined carbohydrates, saturated fats, and fatty or processed meats.
+
+
+#### People with diabetes should be advised to follow the guidelines for the general population for the recommended intakes of saturated fat, cholesterol, and trans fat (76). In a 12-week double-blinded randomized controlled feeding study among 61 adults with overweight and obesity, without diabetes, higher intakes of saturated fat, compared with polyunsaturated fat, were found to increase liver fat deposition (140). A 2021 systematic review and meta-analysis including over 22,500 prospective study participants followed for 9.8 years reported that replacing saturated fats with other macronutrients, such as polyunsaturated fats, was associated with reduced CVD occurrence (141). Trans fats should be avoided.
+
+
+#### In addition, as foods high in saturated fats are progressively decreased, they should be replaced with foods high in unsaturated fats and not with refined carbohydrate foods (142).
+
+
+#### Evidence does not conclusively support recommending n-3 (eicosapentaenoic acid and docosahexaenoic acid) supplements for all people with diabetes for the prevention or treatment of cardiovascular events (50,143). In individuals with type 2 diabetes, two systematic reviews with n-3 and n-6 fatty acids concluded that the dietary supplements did not improve glycemic management (144,145). In the ASCEND (A Study of Cardiovascular Events iN Diabetes) trial, when compared with placebo, supplementation with n-3 fatty acids at a dose of 1 g/day did not lead to cardiovascular benefit in people with diabetes without evidence of CVD (146).
+
+
+#### However, results from the Reduction of Cardiovascular Events with Icosapent Ethyl-Intervention Trial (REDUCE-IT) found that supplementation with 4 g/day of pure eicosapentaenoic acid significantly lowered the risk of adverse cardiovascular events. REDUCE-IT included 8,179 participants, of whom over 50% had diabetes, and found a 5% absolute reduction in cardiovascular events for individuals with established atherosclerotic CVD already treated with a statin with residual hypertriglyceridemia (135–499 mg/dL [1.52–5.63 mmol/L]) (147). See Section 10, “Cardiovascular Disease and Risk Management,” for more information.
+
+
+## Sodium
+
+
+#### As for the general population, people with diabetes are advised to limit their sodium consumption to <2,300 mg/day (50,148). Sodium intake has been shown to mediate glucose metabolism in a number of studies and affect eGFR, so limiting sodium intake is a valuable strategy for people with diabetes with or without kidney disease (148,149). In their post hoc analysis of the DASH-sodium RCT, Morales-Alvarez et al. reported that participants randomized to the low-sodium DASH eating pattern (containing ∼1,150 mg sodium/day [50 mmol sodium/day]) had change in eGFR of −3.10 mL/min/1.73 m2 (95% CI −5.46 to −0.73) after 4 weeks compared with 3,450 mg sodium/day (150 mmol sodium/day) (150).
+
+
+#### Limiting sodium intake is most easily achieved through reducing consumption of processed and ultraprocessed foods, which are major contributors of sodium intake. Encouraging people to avoid adding salt to foods and during cooking can also help. Sodium recommendations should consider palatability, availability, affordability, clinical appropriateness, and the difficulty of achieving low-sodium recommendations in a nutritionally adequate eating plan.
+
+
+#### Micronutrients and Other Supplements
+
+
+#### Despite lack of evidence of benefit from dietary supplements, consumers continue to take them. Estimates show that up to 59% of people with diabetes in the U.S. use supplements (151). Without underlying deficiency, there is no benefit from herbal or other (i.e., vitamin or mineral) supplementation for people with diabetes (50,152).
+
+
+#### Federal law in the U.S. broadly defines dietary supplements as products having one or more dietary ingredients, including vitamins, minerals, herbs or other botanicals, amino acids, enzymes, tissues from organs or glands, or extracts of these (153). It should also be noted that dietary supplements are not regulated like other over-the-counter medications or prescription drugs in the U.S. (154). In combination with the strong views on dietary supplements (both positive and negative), this can contribute to consumer confusion (155). Consumers can also consult the U.S. Food and Drug Administration (FDA) Dietary Supplement Ingredient Directory to locate information about ingredients used in dietary supplements and any action taken by the agency with regard to that ingredient (156).
+
+
+#### Routine antioxidant supplementation (such as vitamins E and C) is not recommended due to lack of evidence of efficacy and concern related to long-term safety. Based on the 2022 U.S. Preventative Services Task Force statement, the harms of β-carotene outweigh the benefits for the prevention of CVD or cancer. β-Carotene was associated with increased lung cancer and cardiovascular mortality risk (157).
+
+
+#### Vitamin D in the context of diabetes has generated much research, but universal vitamin D supplementation for people with type 1 or type 2 diabetes without deficiency is not recommended at this time. Although post hoc analyses of the Vitamin D and Type 2 Diabetes Study (D2d) prospective RCT and Diabetes Prevention and Active Vitamin D (DPVD) and some meta-analyses suggest a potential benefit in specific populations (158–160), other studies have found no benefit or mixed results (161–163). Furthermore, adopting healthy lifestyle habits, including the eating patterns recommended herein, are strongly advised.
+
+
+#### Additional research is needed to define individual characteristics, clinical indicators, and appropriate dosages if and when vitamin D supplementation might benefit people with type 1 or type 2 diabetes.
+
+
+#### There is insufficient evidence to support the routine use of herbal supplements and micronutrients, such as cinnamon (164), curcumin (e.g., turmeric), aloe vera, or chromium, to improve glycemia in people with type 1 or type 2 diabetes (50).
+
+
+#### Metformin is associated with vitamin B12 deficiency per a report from the Diabetes Prevention Program Outcomes Study (DPPOS), which suggests that periodic testing of vitamin B12 levels should be considered in people taking metformin, particularly in those with anemia or peripheral neuropathy (165) (see Section 9, “Pharmacologic Approaches to Glycemic Treatment”).
+
+
+#### For special populations, including pregnant or lactating individuals, older adults, vegetarians, and people following very-low-calorie or low-carbohydrate diets, a multivitamin may be necessary (166).
+
+
+## Alcohol
+
+
+#### The long-term effects of alcohol consumption for people with diabetes are unknown. The World Health Organization declared that there is no safe amount of alcohol intake (167,168). Risks associated with alcohol consumption include hypoglycemia and/or delayed hypoglycemia (particularly for those using insulin or insulin secretagogue therapies), weight gain, and hyperglycemia (for those consuming excessive amounts) (50,169). People with diabetes should be educated about these risks and encouraged to monitor glucose frequently before and after drinking alcohol to minimize such risks.
+
+
+#### People with diabetes who consume alcohol can follow the same guidelines as those without diabetes consistent with Dietary Guidelines for Americans, 2020–2025 (76), which does not promote alcohol consumption in people who do not currently drink. To reduce risk of alcohol-related harms, adults can choose not to drink or to drink in moderation by limiting intake to ≤2 drinks a day for men or ≤1 drink a day for women (one drink is equal to a 12-oz beer, a 5-oz glass of wine, or 1.5 oz of distilled spirits) (76). Recent meta-analyses have reported the previously recognized J-shaped relationship between alcohol intake and health risks likely varies by sex, obesity status, genetics, and alcohol intake behaviors (170,171).
+
+
+#### A YMCA-based psychoeducational intervention tailored to those with chronic conditions, including 14- to 18-year-olds with type 1 diabetes, reported improvements in perceived risks of alcohol intake. Importantly, they also reported reduced alcohol consumption (172).
+
+
+#### Nonnutritive Sweeteners and Water
+
+
+#### The FDA has approved many nonnutritive sweeteners (NNS) (containing few or no calories; commonly referred to as artificial sweeteners) for consumption by the general public, including people with diabetes (50,173). However, the safety and role of NNS continue to be sources of concern and confusion for the public.
+
+
+#### For some people with diabetes who are accustomed to regularly consuming sugar-sweetened foods or beverages (e.g., regular soda pop, juice drinks, and other items sweetened with cane sugar or high-fructose corn syrup), NNS may be an acceptable substitute for nutritive sweeteners (those containing calories, such as sugar, honey, and agave syrup) when consumed in moderation (174). NNS do not appear to have a significant effect on glycemic management (175,176), and they can reduce overall calorie and carbohydrate intake (174) as long as individuals are not compensating with additional calories from other food sources (50,177). A recent meta-analysis and systematic review of RCTs found no evidence that NNS raise liver enzymes (178).
+
+
+#### There is mixed evidence from systematic reviews and meta-analyses for NNS use with regard to weight management, with some finding benefit for weight loss (179–181) while other research suggests an association with weight gain (182,183). This may be explained by reverse causality and residual confounding variables (183). The addition of NNS to eating plans poses no benefit for weight loss or reduced weight gain without energy restriction (184). In a recent systematic review and meta-analysis using low-calorie and no-calorie sweetened beverages as an intended substitute for sugar-sweetened beverages, a small improvement in body weight and cardiometabolic risk factors was seen without evidence of harm and had a direction of benefit similar to that seen with water (185).
+
+
+#### While health care professionals should promote water as the healthiest beverage option, people with overweight or obesity and diabetes may also use a variety of no-calorie or low-calorie sweetened products so that they do not feel deprived (185).
+
+
+#### Health care professionals should encourage reductions in foods and beverages with added sugars and promote reducing overall sugar intake and calories with or without the use of NNS. Assuring people with diabetes that NNS have undergone extensive safety evaluation by regulatory agencies and are continually monitored can allay unnecessary concern for harm. Health care professionals can regularly assess individual use of NNS based on the acceptable daily intake (amount of a substance considered safe to consume each day over a person’s life) and recommend moderation. See the chart from the FDA on safe levels of sweeteners found at fda.gov/food/food-additives-petitions/aspartame-and-other-sweeteners-food.
+
+
+## Weight Management
+
+
+#### Management and reduction of weight is important for people with type 1 diabetes, type 2 diabetes, or prediabetes with overweight or obesity. To support weight loss and improve A1C, CVD risk factors, and well-being in adults with overweight or obesity and prediabetes or diabetes, MNT and DSMES services should include an individualized eating plan resulting in an energy deficit in combination with enhanced physical activity (50). Lifestyle intervention programs should be intensive and have frequent follow-up to achieve significant reductions in excess body weight and improve clinical indicators. Behavior modification goals should address physical activity, calorie restriction, healthy weight management strategies, and motivation.
+
+
+#### There is strong and consistent evidence that modest, sustained weight loss can delay the progression from prediabetes to type 2 diabetes (82,186,187) (see Section 3, “Prevention or Delay of Diabetes and Associated Comorbidities”) and is beneficial for type 2 diabetes management (see Section 8, “Obesity and Weight Management for the Prevention and Treatment of Type 2 Diabetes”).
+
+
+#### In prediabetes, the weight loss goal is at least 3–7% from baseline body weight, and higher for reducing risk of progression to type 2 diabetes. In conjunction with support for healthy lifestyle behaviors, medication-assisted weight loss can be considered for people at risk for type 2 diabetes when needed to achieve and sustain 7–10% weight loss (188,189) (see Section 8, “Obesity and Weight Management for the Prevention and Treatment of Type 2 Diabetes”). People with prediabetes at a healthy weight should also be considered for behavioral interventions to help establish routine aerobic and resistance exercise (186,190,191) as well as healthy eating patterns.
+
+
+#### Services delivered by health care professionals familiar with diabetes and its management, such as an RDN, have been found to be effective (81).
+
+
+#### For many individuals with overweight or obesity alongside type 2 diabetes, at least 5% weight loss is needed to achieve beneficial outcomes in glycemic management, lipids, and blood pressure (192). However, any magnitude of weight loss is recommended. It also should be noted that the clinical benefits of weight loss are progressive, and more intensive weight loss goals (i.e., 15%) may be appropriate to maximize benefit depending on need, feasibility, and safety (193,194). Long-term sustainability of weight loss remains a challenge (195). Medications can augment MNT to support weight loss, weight loss maintenance, and improve cardiovascular outcomes.
+
+
+#### Newer medications (e.g., glucagon-like peptide 1 receptor agonists [GLP-1 RAs]) may be more viable, positively affect cardiovascular outcomes, and produce weight reduction beyond 10–15% (196–200). For more information on the nutritional considerations important for people undergoing metabolic surgery, including prevention of malnutrition, please see malnutrition, below.
+
+
+#### In select individuals with type 2 diabetes, an overall healthy eating plan resulting in energy deficit and pharmacotherapy and/or metabolic surgery should be considered to help achieve weight loss and maintenance goals, lower A1C, and reduce CVD risk (188,201,202). A recent systematic review and meta-analysis concluded that when obesity pharmacotherapy is included in intervention efforts (alone or as part of a multipronged intervention), people with obesity can achieve a more significant weight loss of −2.94 kg (P < 0.0001) (203). However, in some populations such as South Asian adults, traditional interventions have not been as effective in preventing or remission of type 2 diabetes, so those groups will benefit from more culturally tailored interventional approaches (204).
+
+
+#### Overweight and obesity are increasingly prevalent in people with type 1 diabetes and present clinical challenges regarding diabetes treatment and CVD risk factors (205,206). Like in adults with type 2 diabetes, there is some evidence that GLP-1 RAs are useful in achieving weight loss among those with type 1 diabetes, although with a higher risk of nausea and ketosis (207).
+
+
+#### Regardless of diabetes type, maintaining weight loss is challenging (208,209) but has well-recognized long-term benefits. The physiology of weight loss maintenance is complex and involves many hormonal, psychosocial, behavioral, and environmental factors. Following a weight loss of at least 8%, a subsequent “weight loss maintenance” intervention was reported to be only moderately beneficial, as it helped sustain physical health improvements but not glucose metabolism improvements (210). However, in another RCT with long-term, real-world, clinic-based follow-up of 10 years, Tomah et al. reported lasting glycemic benefits in their cohort with an average weight loss of 7.7 ± 0.9 kg (−6.9 ± 0.8%) maintained for 10 years (211).
+
+
+#### Starting a conversation about weight management should be based on motivational interviewing techniques (212) beginning with first asking the individual if they want to discuss their weight. Health care professionals should never assume that a person with overweight or obesity wants to discuss their weight at a medical appointment, especially if the appointment is for a seemingly unrelated issue (e.g., back pain, which many people do not realize is often secondary to excess body weight). Using person-centered approaches to weight management conversations involves meeting the individual where they are at in their life and working with what they and their health care professional agree is the most beneficial approach.
+
+
+#### Guidance from an RDN with expertise in motivational interviewing and diabetes and weight management MNT during any comprehensive structured weight loss program is strongly recommended.
+
+
+#### Along with routine medical management visits, people with diabetes and prediabetes should be screened during DSMES and MNT encounters for a history of dieting and past or current disordered eating behaviors. Characterizing an individual’s past efforts with weight loss and their body weight history can also be very useful. Nutrition therapy should be individualized to help address maladaptive eating behavior (e.g., purging) or compensatory changes in medical treatment plan (e.g., overtreatment of hypoglycemic episodes and reduction in medication dosing to reduce hunger) (50) (see disordered eating behavior, below). Disordered eating, eating disorders, and/or disrupted eating can increase challenges for weight and diabetes management.
+
+
+#### For example, caloric restriction may be essential for glycemic management and weight maintenance, but rigid meal plans and strict tracking of food intake and/or body weight may be contraindicated for individuals who are at increased risk of clinically significant maladaptive eating behaviors (213). If eating disorders are identified during screening with diabetes-specific questionnaires, individuals should be referred to a qualified behavioral health professional (1).
+
+
+## Nonreligious Fasting
+
+
+#### The primary forms of nonreligious fasting are intermittent fasting or time-restricted eating. These are popular strategies for weight and glucose management. One of the key distinctions between nonreligious and religious fasting is water intake. See Fig. 5.1 for further details on how religious and nonreligious fasting practices compare.
+
+
+#### Differences and similarities of religious and intermittent fasting for people with diabetes.
+
+
+#### View largeDownload slide
+
+
+#### Figure 5.1Differences and similarities of religious and intermittent fasting for people with diabetes.
+
+
+#### Intermittent fasting is an umbrella term that includes three main forms of restricted eating: alternate-day fasting (energy restriction of 500–600 calories on alternate days), the 5:2 diet (energy restriction of 500–600 calories on consecutive or nonconsecutive days with usual intake the other five), and time-restricted eating (daily calorie restriction based on window of time of 8–15 h). Each produces mild to moderate weight loss (3–8% loss from baseline) over short durations (8–12 weeks) with no significant differences in weight loss when compared with continuous calorie restriction (214,215). A 2024 systematic review and meta-analysis of RCTs examined the most common types of fasting in studies lasting 2–52 weeks.
+
+
+#### The authors concluded that intermittent energy restriction produces small but significant reductions in waist circumference and fat-free mass but were otherwise not superior to continuous energy restriction diets (216). Generally, time-restricted eating or shortening the eating window can be adapted to any eating pattern and has been shown to be safe for adults with type 1 or type 2 diabetes (217). People with diabetes who are taking insulin and/or secretagogues should be medically monitored during the fasting period (218). Because of the simplicity of intermittent fasting and time-restricted eating, these may be useful strategies for people with diabetes who are looking for practical eating management tools.
+
+
+#### Use of partial or total meal replacements is an additional strategy for energy restriction. Meal replacements are prepackaged foods (bars, shakes, and soups) that contain fixed amounts of macro nutrients and micronutrients. They can improve nutrient quality and glycemic management and, consequently, reduce portion size and energy intake. In a meta-analysis involving 17 studies incorporating both partial and total meal replacements, greater weight loss and improvements in A1C and fasting blood glucose were demonstrated compared with conventional meal plans (219).
+
+
+#### Furthermore, meal replacements have been used in several landmark clinical trials, including Look AHEAD (Action for Health in Diabetes) (220), DiRECT (Diabetes Remission Clinical Trial) (221), and PREVIEW (Prevention of Diabetes Through Lifestyle Intervention and Population Studies in Europe and Around the World) (222). Results of these trials showed that partial or total meal replacements can be a potential short-term strategy for weight loss. Regardless of the specific eating pattern or meal plan selected, long-term follow-up and support from members of the diabetes care team are needed to optimize self-efficacy and maintain behavioral changes (85).
+
+
+#### Chrononutrition is an emerging nutrition and biology subspecialty aimed toward increasing the understanding of how the timing of food ingestion affects metabolic health (223). Glucose metabolism follows a circadian rhythm through diurnal variation of glucose tolerance and peaks during daylight hours when food is consumed. Some preliminary studies show cardiometabolic benefits when food is consumed earlier (224). Similarly, circadian disruptions found in shift workers increase risk of type 2 diabetes (225). This evolving area of research currently lacks conclusive evidence, but future studies are anticipated.
+
+
+## Religious Fasting
+
+
+## Recommendations
+
+
+### 5.32 Use the International Diabetes Federation along with Diabetes and Ramadan International Alliance comprehensive prefasting risk assessment to generate a risk score for the safety of religious fasting. Provide fasting-focused education to minimize risks. B
+
+
+### 5.33 Assess and optimize treatment plan, dose, and timing for people with diabetes well in advance of religious fasting to reduce risk of hypoglycemia, dehydration, hyperglycemia, and/or ketoacidosis. B
+
+
+#### Although intermittent fasting and time-restricted eating are specific dietary strategies for energy restriction, religious fasting has been practiced for thousands of years and is part of many faith-based traditions. Duration, frequency, and type of fast vary among different religions (226). For example, Jewish people abstain from any intake for ∼25 h during Yom Kippur (227,228). For Muslims, Ramadan fasting lasts for a full month, when abstinence from any food or drink is required from dawn to dusk (229). Individuals with diabetes who fast have an increased risk for hypoglycemia, dehydration, hyperglycemia, and ketoacidosis (230,231).
+
+
+#### Prefasting risk assessment is essential to increase level of safety (230,231). Various risk factors need to be considered for every individual wishing to fast. Some of these factors are related to the type of fast, type of diabetes, and/or the individual. Indeed, health care professionals should inquire about any religious fasting for people with diabetes and provide education and support to accommodate their choice. The number of days of fasting is an important factor to consider. In Ramadan fasting, a person fasts from dawn to dusk for a lunar month (29–30 days). It is important for the health care professional to comprehensively assess these risk factors well in advance of fasting date, as some of them are modifiable.
+
+
+#### Some of these factors are related to the nature of the fasting practice, others are related to diabetes, and others might be due to individual factors. The International Diabetes Federation along with Diabetes and Ramadan International Alliance adopted a risk calculator for the various risk factors (230,232). Several clinical studies from different countries have been published that assess the validity of the fasting risk score and the ease of use of it (232–235). The accumulation of these risk factors provides a risk score as low, moderate, or high (Table 5.4) (230). While the risks of different religious fasting practices may vary, this risk calculator provides some useful guidance for other religious fasting.
+
+
+#### Table 5.4Elements for risk calculation and suggested risk score for people with diabetes who seek to fast during Ramadan
+
+
+#### Risk element	Risk score
+
+
+#### 1. Diabetes classification and duration
+
+
+#### Type 1 diabetes
+
+
+#### 1
+
+
+#### Type 2 diabetes
+
+
+#### 0
+
+
+#### 2. Duration of diabetes (years)
+
+
+#### A duration of ≥10 years
+
+
+#### 1
+
+
+#### A duration of <10 years
+
+
+#### 0
+
+
+#### 3. Presence of hypoglycemia
+
+
+#### Hypoglycemia unawareness
+
+
+#### 6.5
+
+
+#### Recent severe hypoglycemia
+
+
+#### 5.5
+
+
+#### Multiple weekly hypoglycemia
+
+
+#### 3.5
+
+
+#### Hypoglycemia less than one time per week
+
+
+#### 1
+
+
+#### No hypoglycemia
+
+
+#### 0
+
+
+#### 4. Level of glycemic management
+
+
+#### A1C levels >9% (>75 mmol/mol)
+
+
+#### 2
+
+
+#### A1C levels 7.5–9% (59–75 mmol/mol)
+
+
+#### 1
+
+
+#### A1C levels <7.5% (<59 mmol/mol)
+
+
+#### 0
+
+
+#### 5. Type of treatment
+
+
+#### Multiple daily mixed insulin injections
+
+
+#### 3
+
+
+#### Basal bolus/insulin pump
+
+
+#### 2.5
+
+
+#### Once-daily mixed insulin
+
+
+#### 2
+
+
+#### Basal insulin
+
+
+#### 1.5
+
+
+#### Glibenclamide/glyburide
+
+
+#### 1
+
+
+#### Gliclazide modified release or glimepiride or repaglinide
+
+
+#### 0.5
+
+
+#### Other therapy not including sulfonylureas or insulin
+
+
+#### 0
+
+
+## 6. Self-monitoring of glucose
+
+
+#### Indicated but not conducted
+
+
+#### 2
+
+
+#### Indicated but conducted suboptimally
+
+
+#### 1
+
+
+#### Conducted as indicated
+
+
+#### 0
+
+
+#### 7. Acute complications
+
+
+#### DKA or HHS in the last 3 months
+
+
+#### 3
+
+
+#### DKA or HHS in the last 6 months
+
+
+#### 2
+
+
+#### DKA or HHS in the last 12 months
+
+
+#### 1
+
+
+#### No DKA or HHS
+
+
+#### 0
+
+
+#### 8. MVD complications and comorbidities
+
+
+#### Unstable MVD
+
+
+#### 6.5
+
+
+#### Stable MVD
+
+
+#### 2
+
+
+#### No MVD
+
+
+#### 0
+
+
+#### 9. Renal complications and comorbidities
+
+
+#### eGFR <30 mL/min/1.73 m2
+
+
+#### 6.5
+
+
+#### eGFR 30–45 mL/min/1.73 m2
+
+
+#### 4
+
+
+#### eGFR 45–60 mL/min/1.73 m2
+
+
+#### 3
+
+
+#### eGFR >60 mL/min/1.73 m2
+
+
+#### 0
+
+
+## 10. Pregnancy*
+
+
+#### Pregnant not within glycemic goals
+
+
+#### 6.5
+
+
+#### Pregnant within glycemic goals
+
+
+#### 3.5
+
+
+#### Not pregnant
+
+
+#### 0
+
+
+#### 11. Frailty and cognitive function
+
+
+#### Impaired cognitive function or frail
+
+
+#### 6.5
+
+
+#### >70 years old with no home support
+
+
+#### 3.5
+
+
+#### No frailty or loss in cognitive function
+
+
+#### 0
+
+
+#### 12. Physical labor
+
+
+#### Highly intense physical labor
+
+
+#### 4
+
+
+#### Moderately intense physical labor
+
+
+#### 2
+
+
+#### No physical labor
+
+
+#### 0
+
+
+#### 13. Previous Ramadan experience
+
+
+#### Overall negative experience
+
+
+#### 1
+
+
+#### No negative or positive experience
+
+
+#### 0
+
+
+#### 14. Fasting hours (varies by geographical location for time of sunrise and sunset)
+
+
+#### ≥16 h
+
+
+#### 1
+
+
+#### <16 h
+
+
+#### 0
+
+
+#### Risk categories are defined as follows: score 0–3, low risk, fasting is probably safe; score 3.5–6, moderate risk, fasting is uncertain; score >6, high risk, fasting is probably unsafe. DKA, diabetic ketoacidosis; eGFR, estimated glomerular filtration rate; HHS, hyperglycemic hyperosmolar state; MVD, macrovascular disease (cardiac, cerebral, or peripheral).*Individuals who are pregnant or breastfeeding have the right to not fast regardless of whether they have diabetes or not. Adapted from Hassanein et al. (230).
+
+
+#### Prefasting education regarding the importance of increasing the frequency of glucose monitoring for people wishing to fast is very important. The timing of glucose monitoring is also especially important, as the last few hours of fasting are frequently associated with approximately 50% of hypoglycemic events (236). Consequently, avoiding intense physical activity during the last few hours of fasting seems to be a sensible approach.
+
+
+#### During religious fasting, some people change their nutrition habits and overindulge after fasting concludes. In many communities, the meal consumed to break the fast is rich in carbohydrates and includes foods and beverages high in added sugars and fat (230). Indeed, in a recent study in type 2 diabetes, 16.5% of people with diabetes who fasted for Ramadan reported high blood glucose of >300 mg/dL (>16.6 mmol/L) during fasting days (236). Individualized fluid adjustment and meal advice should be provided with emphasis on higher intake of fiber and replacing added sugars with complex carbohydrates to minimize hypoglycemia and hyperglycemia and emphasis on sustaining adequate daily fluid intake (237).
+
+
+#### Treatment before and after fasting should be culturally sensitive and individualized. Specific recommendations for diabetes management during religious fasting in different faiths are available (230,231). In general, for people planning to fast for long hours and for multiple consecutive days, choice of treatment should prioritize drugs with low hypoglycemia risk. Hypoglycemia risk while fasting in people using insulin, sulfonylureas, and other insulin secretagogues is higher than those treated with other types of diabetes medications (230). The safety of SGLT2 inhibitors was assessed in several studies during Ramadan fasting. These studies did not show significant change in kidney function, dehydration rates, or ketosis (238).
+
+
+#### Guidelines do not advise any change in SGLT2 inhibitor dose during fasting; however, they advise against initiating SGLT2 inhibitors close to the start of fasting days to avoid excessive thirst (230). Table 5.5 summarizes the effect of fasting on different treatment options and the possible change in doses or timing for people with diabetes.
+
+
+#### Table 5.5Changes in medications during fasting
+
+
+#### Medication name	Risk of hypoglycemia	Timing	Total daily dose
+
+
+#### Metformin, SGLT2 inhibitor, DPP-4 inhibitor, GLP-1 receptor agonist, acarbose, or pioglitazone 	Low 	• If once daily, then take at main mealtime.
+
+
+#### • If twice daily, then split dose between the two meals.
+
+
+#### • If once weekly, no change of time.  	• No change
+
+
+#### New generation sulfonylurea (glimepiride and gliclazide) 	Low to moderate 	• If once daily, then take at main mealtime.
+
+
+#### • If twice daily, then split dose between the two meals. 	• Reduce dose if glucose levels are within individualized goal range and if no hypoglycemia or hyperglycemia is present at baseline.
+
+
+#### Older generation of sulfonylurea (glyburide)  	Moderate to high  	• Take at time of main meal  	• Replace with newer-generation sulfonylurea or reduce dose by 50%.
+
+
+#### Basal insulin 	Moderate to high  	• For longer-acting basal analogs (glargine 300 or degludec), no need to change timing.
+
+
+#### • For other basal insulins, take at beginning of breaking fast meal.  	• Choose the insulin with lower risk of hypoglycemia among the class.
+
+
+#### • Reduce dose by 25–35% if not well managed.
+
+
+#### Prandial insulin  	High 	• At mealtime  	• Reduce dose of insulin for the meal followed by fasting (35–50%).
+
+
+#### • For other meals, insulin dose should match carbohydrate intake.
+
+
+#### Mixed insulin and insulin coformulations  	High 	• If once daily, then take at main mealtime.
+
+
+#### • If twice daily, then split dose between the two meals  	• Reduce dose of insulin for the meal followed by fasting (35–50%).
+
+
+#### • For other meals, no change of dose.
+
+
+#### DPP-4, dipeptidyl peptidase 4; GLP-1, glucagon-like peptide 1; SGLT2, sodium–glucose cotransporter 2.
+
+
+#### Technology could be an important tool to enhance safety during fasting. Several studies have investigated the use of monitoring technology during Ramadan fasting (e.g., flash glucose monitoring and real-time CGM [rtCGM]) and confirmed that these tools are able to support high-risk groups wishing to fast, especially if combined with Ramadan-focused education (238–240). Meanwhile, the use of insulin pumps has been associated with low rates of hypoglycemia during fasting in people with type 1 diabetes. Diabetes technologies should be considered as a useful adjunct to risk calculation and/or nutrition planning and education during religious fasting for people with diabetes (230).
+
+
+## Malnutrition
+
+
+#### Malnutrition is defined by the World Health Organization as “deficiencies, excesses, or imbalances in a person’s intake of energy and/or nutrients.” Malnutrition can occur in people of varying weight status, with the “double burden” of obesity and malnutrition being increasingly recognized among those with chronic conditions. Malnutrition is also more likely to develop in populations experiencing poverty and in older age-groups (241). Often, malnutrition and sarcopenia, which is a condition of loss in lean body mass combined with declined strength and functionality among older adults, codevelop (242).
+
+
+#### A 2022 meta-analysis examined 45 studies including 12,237 adults and reported that 18% of people with type 2 diabetes had sarcopenia with A1C increasing the risk (odds ratio 1.16; 95% CI, 1.09–1.24) (243).
+
+
+#### There is concern that GLP-1 RAs and dual GIP and GLP-1 RAs and metabolic surgery for weight loss, which are more common in some populations with diabetes, can increase the risk for malnutrition and sarcopenia (244,245). This is especially concerning among those with heart, kidney, or liver disease and obesity and among racial and ethnic minoritized communities (246,247). Health care professionals should encourage resistance training (248), sufficient protein intake, and screening for sarcopenia and malnutrition in people with diabetes who are experiencing significant or rapid weight loss because they could be at risk for malnutrition.
+
+
+#### While there is no single best method to screen for both malnutrition and sarcopenia, there are individual instruments available to screen for each respective condition including the Simplified Nutritional Appetite Questionnaire (SNAQ), the Malnutrition Universal Screening Tool (MUST), and others (249–251).
+
+
+#### Advising a healthy, whole-foods–based eating pattern alongside regular strength training exercise to maintain lean body mass will be of paramount importance for these segments of the diabetes population (244) (see Section 8, “Obesity and Weight Management for the Prevention and Treatment of Type 2 Diabetes”).
+
+
+#### Food Insecurity and Access
+
+
+#### Food insecurity is a household-level economic and social condition of limited or uncertain access to adequate food (252). In 2022, almost 13% of Americans were food insecure (252), and food insecurity affects 16% of adults with diabetes compared with 9% of adults without diabetes (253). There is a complex bidirectional association between food insecurity and co-occurring diabetes. Food security screening should happen at all levels of the health care system. Any member of the health care team can screen for food insecurity using the Hunger Vital Sign. Households are considered at risk if they answer either or both of the following statements as “often true” or “sometimes true” (compared with “never true”) (254):
+
+
+#### “Within the past 12 months, we worried whether our food would run out before we got money to buy more.”
+
+
+#### “Within the past 12 months, the food we bought just didn’t last, and we didn’t have money to get more.”
+
+
+#### If screening is positive for food insecurity, efforts should be made to refer to appropriate programs and resources. See Section 1, “Improving Care and Promoting Health in Populations,” for more information concerning the social determinants of health and related issues like food insecurity and access.
+
+
+## Physical Activity
+
+
+## Recommendations
+
+
+### 5.34 Counsel youth with type 1 diabetes C or type 2 diabetes B to engage in 60 min/day or more of moderate- or vigorous-intensity aerobic activity, with muscle-strengthening and bone-strengthening activities at least 3 days/week, and to limit the amount of time being spent sedentary, including recreational screen time. C
+
+
+### 5.35 Counsel most adults with type 1 diabetes C and type 2 diabetes B to engage in 150 min or more of moderate- to vigorous-intensity aerobic activity per week, spread over at least 3 days/week, with no more than 2 consecutive days without activity. Shorter durations (minimum 75 min/week) of vigorous-intensity or interval training may be sufficient for more physically fit individuals.
+
+
+### 5.36 Counsel adults with type 1 diabetes C and type 2 diabetes B to engage in 2–3 sessions/week of resistance exercise on nonconsecutive days.
+
+
+### 5.37 Recommend flexibility training and balance training 2–3 times/week for older adults with diabetes. Yoga and tai chi may be included based on individual preferences to increase flexibility, muscular strength, and balance. C
+
+
+### 5.38 For all people with diabetes, evaluate baseline physical activity and time spent in sedentary behavior (i.e., quiet sitting, lying, and leaning). For people who do not meet activity guidelines, encourage an increase in physical activities (e.g., walking, yoga, housework, gardening, swimming, and dancing) above baseline. B Counsel that prolonged sitting should be interrupted at least every 30 min for blood glucose benefits. C
+
+
+### 5.39 Counsel adults and youth treated with weight management pharmacotherapy or metabolic surgery that meeting physical activity recommendations, and in particular muscle-strengthening exercises, may be beneficial for maintaining lean body mass. E
+
+
+#### Physical activity includes all movement that increases energy use, and it is an important part of the diabetes management plan. Exercise is a more specific form of physical activity that is structured and designed to improve physical fitness. Both physical activity and exercise are important. Exercise has been shown to improve blood glucose levels, reduce cardiovascular risk factors, contribute to weight loss, and improve well-being (255). Physical activity is important for the general population as well as people at risk for and with established diabetes. Exercise plays a specific role in glucose management and in the prevention of diabetes complications in those with type 2 diabetes.
+
+
+#### Many individuals with type 2 diabetes do not meet the recommended physical activity levels (150 min/week). Objective measurement by accelerometer in 871 individuals with type 2 diabetes showed that 44.2%, 42.6%, and 65.1% of White, African American, and Hispanic individuals, respectively, met the recommended physical activity threshold (256). An RCT in 1,366 individuals with prediabetes combined a physical activity intervention with text messaging and telephone support, which showed improvement in daily step count at 12 months compared with the control group, but this was not sustained at 48 months (257).
+
+
+#### Another RCT, including 324 individuals with prediabetes, showed increased physical activity at 8 weeks with supportive text messages, but by 12 weeks there was no difference between groups (258). It is important for diabetes care management teams to understand the difficulty that many people have reaching recommended physical activity goals and to identify individualized approaches to improve physical activity and exercise goal achievement, which may need to change over time.
+
+
+#### Moderate to high volumes of aerobic activity are associated with substantially lower cardiovascular and overall mortality risks in both type 1 and type 2 diabetes (259). A prospective observational study of adults with type 1 diabetes suggested that higher amounts of physical activity led to reduced cardiovascular mortality after a mean follow-up time of 11.4 years for people with and without chronic kidney disease (260). There are also considerable data for the health benefits (e.g., increased cardiovascular fitness, greater muscle strength, and improved insulin sensitivity) of regular exercise for those with type 1 diabetes (261).
+
+
+#### Exercise training in type 1 diabetes may also improve several important markers such as triglyceride level, LDL cholesterol, waist circumference, and body mass (262).
+
+
+#### Structured exercise interventions of at least 8 weeks have been shown to lower A1C by 0.66% in people with type 2 diabetes, even without a significant change in BMI (263). In adults with type 2 diabetes, higher levels of exercise intensity are associated with greater improvements in A1C and in cardiorespiratory fitness (264); sustained improvements in cardiorespiratory fitness and weight loss have also been associated with a lower risk of heart failure (265). Other benefits include slowing the decline in mobility among people with diabetes and overweight (266).
+
+
+#### Physical activity and exercise should be recommended and prescribed to all individuals who are at risk for or have diabetes as part of management of glycemia and overall health, unless otherwise contraindicated. Specific recommendations and precautions will vary by the type of diabetes, age, physical activity, and presence of diabetes-related health complications. Recommendations should be tailored to meet the specific needs of each individual (267), and different strategies may be used in specific populations to increase engagement in physical activity (268). Furthermore, physical activity and exercise plans can be modified or adapted to best suit the fitness level of the individual, which may vary due to disability or other complications.
+
+
+#### Individuals with diabetes may benefit from a team-based approach, including working with an exercise physiologist, physical therapist, or personal trainer, among others, where available and affordable (269). The ADA position statement “Physical Activity/Exercise and Diabetes” reviews the evidence for the benefits of exercise in people with type 1 and type 2 diabetes and offers specific recommendations (267).
+
+
+#### Exercise and Youth
+
+
+#### Youth with diabetes or prediabetes should be encouraged to engage in regular physical activity, including at least 60 min of moderate-to-vigorous aerobic activity every day and muscle- and bone-strengthening activities at least 3 days per week (270). Structured exercise programs promoting nutrition modification and increasing exercise in adolescents at risk for type 2 diabetes have been shown to reduce risk of type 2 diabetes development (271). In general, youth with type 1 diabetes benefit from being physically active, and meta-analyses have demonstrated a significant association between physical activity and lower A1C (272). Thus, an active lifestyle should be recommended to all children and adolescents with type 1 and type 2 diabetes (273).
+
+
+#### Youth with type 1 diabetes who engage in more physical activity may have better health outcomes and health-related quality of life (274,275). Youth are recommended to limit the amount spent as sedentary time, including recreational screen time, to less than 2 h per day (276,277). See Section 14, “Children and Adolescents,” for details.
+
+
+### Frequency and Type of Physical Activity
+
+
+#### For all people with diabetes, baseline physical activity and time spent in sedentary behavior should be evaluated. People who do not meet activity guidelines should be encouraged to increase physical activity (e.g., walking, yoga, housework, gardening, swimming, and dancing) above baseline (278). Health care professionals should counsel people with diabetes to engage in aerobic and resistance exercise regularly (267). Aerobic activity bouts should last at least 10 min, with the goal of ∼30 min/day or more most days of the week for adults with type 2 diabetes. Daily exercise, or at least not allowing more than 2 days to elapse between exercise sessions, is recommended to decrease insulin resistance, regardless of diabetes type (279,280).
+
+
+#### A study in adults with type 1 diabetes found a dose-response inverse relationship between self-reported bouts of physical activity per week and A1C, BMI, hypertension, dyslipidemia, and diabetes-related complications such as hypoglycemia, DKA, retinopathy, and microalbuminuria (281), and higher physical activity reduces mortality risk in people with type 1 diabetes (260). Over time, activities should progress in intensity, frequency, and/or duration to at least 150 min/week of moderate-intensity exercise. Adults able to run at 6 mph (9.7 km/h) for at least 25 min can benefit sufficiently from shorter durations of vigorous-intensity activity or interval training (75 min/week) (267).
+
+
+#### Many adults, including most with type 2 diabetes, may be unable or unwilling to participate in such intense exercise and should engage in moderate exercise for the recommended duration.
+
+
+#### Adults with diabetes are encouraged to engage in 2–3 sessions/week of resistance exercise on nonconsecutive days (282). Although heavier resistance training with free weights or weight machines may improve glycemia and strength (283,284), resistance training of any intensity is recommended to improve strength, balance, and the ability to engage in activities of daily living throughout the life span. Health care professionals should support people with diabetes to set stepwise goals toward meeting the recommended exercise goals. As individuals intensify their exercise program, medical monitoring may be indicated to ensure safety and evaluate the effects on glucose management. (See physical activity and glycemic management, below.)
+
+
+#### The use of weight management pharmacotherapy has recently increased. Both weight management pharmacotherapy and metabolic surgery can lead to a decrease in body weight, which often induces fat mass loss as well as loss of lean body mass. This has raised concern about the loss of muscle mass leading over time to the development or worsening of frailty and sarcopenic obesity (285). One study demonstrated that after discontinuation of weight management pharmacotherapy with GLP-1 RAs in people with obesity but without diabetes, the combination of supervised exercise and GLP-1 RA therapy was more favorable in maintaining body weight and body composition compared with GLP-1 RA therapy alone. Data in people with diabetes and overweight or obesity are emerging.
+
+
+#### It is recommended that people with diabetes be encouraged to follow the physical activity recommendations, in particular muscle-strengthening activities, to reduce the loss of lean mass (285).
+
+
+#### Evidence supports that all individuals, including those with diabetes, should be encouraged to reduce the amount of time spent being sedentary—waking behaviors with low energy expenditure (e.g., seated work at a computer and watching television)—by breaking up bouts of sedentary activity (at least every 30 min) by briefly standing, walking, or performing other light physical activities (286–288). Participating in leisure-time activity and avoiding extended sedentary periods may help prevent type 2 diabetes for those at risk and may also aid in glycemic management for those with diabetes (289,290).
+
+
+#### A systematic review and meta-analysis found that higher frequency of regular leisure-time physical activity was more effective in reducing A1C (291). A wide range of activities, including yoga, tai chi, and other types, can significantly affect A1C, flexibility, muscle strength, and balance (255,292–294). Flexibility and balance exercises may be particularly important in older adults with diabetes for maintenance of range of motion, strength, and balance (267) (Fig. 5.2). There is strong evidence that exercise interventions in individuals with type 2 diabetes improve depression, A1C, and overall psychosocial well-being (295).
+
+
+#### Importance of 24-h physical behaviors for type 2 diabetes. Adapted from Davies et al. (75).
+
+
+#### View largeDownload slide
+
+
+#### Figure 5.2Importance of 24-h physical behaviors for type 2 diabetes. Adapted from Davies et al. (75).
+
+
+## Physical Activity and Glycemic Management
+
+
+#### Clinical trials have provided strong evidence for the A1C-lowering value of resistance training in older adults with type 2 diabetes (267) and for an additive benefit of combined aerobic and resistance exercise on A1C reduction in adults with type 2 diabetes (296). If not contraindicated, people with type 2 diabetes should be encouraged to do at least two weekly sessions of resistance exercise (free weights, machines, elastic bands, or body weight as resistance), with each session consisting of at least one set (group of consecutive repetitive exercise motions) of five or more different resistance exercises involving the large muscle groups (297).
+
+
+#### For people with type 1 diabetes, there can be a variable glucose response to exercise, possibly leading to hypoglycemia or hyperglycemia. This variability should be taken into consideration when recommending the type, intensity, and duration of exercise for a given individual (261).
+
+
+#### Individuals of childbearing potential with preexisting diabetes, particularly type 2 diabetes, and those at risk for or presenting with gestational diabetes mellitus should be advised to engage in regular moderate-intensity physical activity prior to and during their pregnancies, as tolerated (267).
+
+
+## High-Intensity Interval Training
+
+
+#### High-intensity interval training (HIIT) involves short bursts of aerobic training performed between 65% and 90% VO2peak (a measure of maximal aerobic capacity) or 75% and 95% heart rate peak for 10 s to 4 min with 12 s to 5 min of active or passive recovery. HIIT is a potentially time-efficient modality that can elicit significant physiologic and metabolic adaptations for individuals with type 1 and type 2 diabetes (298,299). Higher intensities of aerobic training are generally considered superior to low-intensity training (300). HIIT reduces A1C and BMI and improves fitness levels in individuals with type 2 diabetes.
+
+
+#### Because HIIT can lead to transient increases in post-exercise hyperglycemia, individuals with type 1 diabetes may need to use bolus correction (301) and individuals with type 2 diabetes are encouraged to monitor blood glucose when starting HIIT (297). In type 1 diabetes, HIIT reduces A1C and insulin requirements and improves cardiometabolic risk profiles (299). Variability in glucose may occur with an increased risk in delayed hypoglycemia, so careful monitoring of glucose during and after HIIT is advised (299).
+
+
+#### Pre-exercise Evaluation
+
+
+#### As discussed more fully in Section 10, “Cardiovascular Disease and Risk Management,” the best protocol for assessing asymptomatic people with diabetes for coronary artery disease remains unclear. The ADA consensus report “Screening for Coronary Artery Disease in Patients With Diabetes” (302) concluded that routine testing is not recommended. However, health care professionals should perform a careful history, assess cardiovascular risk factors, and be aware of the atypical presentation of coronary artery disease, such as a recently reported or measured decrease in exercise tolerance. Certainly, those with high risk should be encouraged to start with short periods of low-intensity exercise and slowly increase the duration and intensity as tolerated.
+
+
+#### Health care professionals should assess for conditions that might contraindicate certain types of exercise or predispose to injury, such as uncontrolled hypertension, untreated proliferative retinopathy, autonomic neuropathy, orthostatic hypotension, peripheral neuropathy, balance impairment, and a history of foot ulcers or Charcot foot. Age and previous physical activity level should be considered when customizing the exercise plan to the individual’s needs. Those with complications may need a more thorough evaluation prior to starting an exercise program (261).
+
+
+## Hypoglycemia
+
+
+#### For individuals taking insulin and/or insulin secretagogues, physical activity may cause hypoglycemia if the medication dose or carbohydrate consumption is not adjusted for the exercise session and post-bout effect on glucose. Individuals on these therapies may need to ingest carbohydrates if pre-exercise glucose levels are <90 mg/dL (<5.0 mmol/L), depending on whether they are able to lower insulin doses during the workout (such as with an insulin pump or reduced pre-exercise insulin dosage), the time of day exercise is done, and the intensity and duration of the activity (261). In some people with diabetes, hypoglycemia after exercise may occur and last for several hours due to increased insulin sensitivity.
+
+
+#### Hypoglycemia is not common in those who are not treated with insulin or insulin secretagogues, and no routine preventive measures for hypoglycemia are usually advised in these cases. Intense activities, such as HIIT, may actually raise glucose levels instead of lowering them, especially if pre-exercise glucose is elevated (261). Because of variation in glycemic response to exercise, people with diabetes should be taught to check blood glucose levels and/or monitor CGM values during and after exercise, how to understand the effect of exercise on glucose, and about the potential prolonged effects (depending on intensity and duration) (303). See Section 6, “Glycemic Goals and Hypoglycemia,” for more information on hypoglycemia prevention and management.
+
+
+#### Exercise in the Presence of Microvascular Complications
+
+
+#### See Section 11, “Chronic Kidney Disease and Risk Management,” and Section 12, “Retinopathy, Neuropathy, and Foot Care,” for more information on these long-term complications. A meta-analysis demonstrated that high versus low levels of physical activity were associated with lower CVD incidence and mortality (summary risk ratio 0.84 [95% CI 0.77–0.92], n = 7, and 0.62 [0.55–0.69], n = 11) and fewer microvascular complications (0.76 [0.67–0.86], n = 8). Dose-response meta-analyses showed that physical activity was associated with lower risk of diabetes-related complications even at lower activity levels (304).
+
+
+## Retinopathy
+
+
+#### If proliferative diabetic retinopathy or severe nonproliferative diabetic retinopathy is present, then vigorous-intensity aerobic or resistance exercise may be contraindicated because of the risk of triggering vitreous hemorrhage or retinal detachment (305). Consultation with an ophthalmologist prior to engaging in an intense exercise plan may be appropriate.
+
+
+## Peripheral Neuropathy
+
+
+#### Decreased pain sensation and a higher pain threshold in the extremities can result in an increased risk of skin breakdown, infection, and Charcot joint destruction with some forms of exercise. Therefore, a thorough assessment should be done to ensure that neuropathy does not alter kinesthetic or proprioceptive sensation during physical activity, particularly in those with more severe neuropathy. Moderate-intensity walking may not lead to an increased risk of foot ulcers or reulceration in those with peripheral neuropathy who use proper footwear (306,307). In addition, 150 min/week of moderate exercise improved outcomes in people with prediabetic neuropathy (308). All individuals with peripheral neuropathy should wear proper footwear and examine their feet daily to detect lesions early.
+
+
+#### Anyone with a foot injury or open sore should be restricted to non–weight-bearing activities.
+
+
+## Autonomic Neuropathy
+
+
+#### Autonomic neuropathy can increase the risk of exercise-induced injury or adverse events through decreased cardiac responsiveness to exercise, postural hypotension, impaired thermoregulation, impaired night vision due to impaired papillary reaction, and greater susceptibility to hypoglycemia (309). Cardiovascular autonomic neuropathy is also an independent risk factor for cardiovascular death and silent myocardial ischemia (310). Therefore, individuals with diabetic autonomic neuropathy should undergo cardiac investigation before beginning physical activity more intense than that to which they are accustomed.
+
+
+## Chronic Kidney Disease
+
+
+#### Physical activity can acutely increase urinary albumin excretion. However, there is no evidence that vigorous-intensity exercise accelerates the rate of progression of CKD, and there appears to be no need for specific exercise restrictions for people with CKD in general (305).
+
+
+### Smoking Cessation: Tobacco, E-cigarettes, and Cannabis
+
+
+## Recommendations
+
+
+### 5.40 Advise all people with diabetes not to use cigarettes and other tobacco products or e-cigarettes. A
+
+
+### 5.41 Ask people with diabetes routinely about the use of cigarettes or other tobacco products. After identification of use, recommend and refer for combination treatment consisting of both tobacco/smoking cessation counseling and pharmacologic therapy. A
+
+
+### 5.42 Advise people with type 1 diabetes C and those with other forms of diabetes at risk for diabetic ketoacidosis E not to use recreational cannabis in any form.
+
+
+#### A causal link between cigarette smoking and diabetes has been established and reported on by the Surgeon General for over a decade (311). Results from epidemiologic, case-control, and cohort studies provide convincing evidence to support the causal link between cigarette smoking and multiple health risks that can have a profound effect on morbidity and mortality for people with diabetes (311). People with diabetes who smoke and are exposed to second-hand smoke have a heightened risk of macrovascular complications (e.g., cardiovascular and peripheral vascular disease), microvascular complications (e.g., kidney disease and visual impairment), worsened glycemic outcomes, and premature death compared with those who do not smoke (312–315).
+
+
+#### Emerging data suggest that smoking has a role in the development of type 2 diabetes, and quitting has been shown to significantly decrease this risk over time (316).
+
+
+#### Routine (every visit with every person), thorough assessment of all types of tobacco use is essential to prevent tobacco product initiation and promote cessation. Evidence demonstrates significant benefits to quitting smoking for all people, resulting in a reduction and even reversal of adverse health effects in addition to an increase in life expectancy by as much as a decade (317). However, data show that tobacco use prevalence among adults with chronic conditions has remained persistently higher than that in the general population, though with recent declines in smoking in middle-aged and older adults with diabetes (318).
+
+
+#### Numerous large RCTs have demonstrated the efficacy and cost-effectiveness of both intensive and brief counseling on smoking cessation, including the use of telephone quit lines and web-based interventions, in reducing tobacco use and maintaining abstinence from smoking (317,319). Current recommendations include both counseling and pharmacologic therapy to assist with smoking cessation in nonpregnant adults (320). A secondary data analysis of the Evaluating Adverse Events in a Global Smoking Cessation Study (EAGLES), a randomized, double-blind, triple-dummy, placebo-controlled and active-controlled trial, found varenicline to be the most efficacious pharmacotherapy for people with diabetes when compared with placebo (321).
+
+
+#### These findings support the American Thoracic Society 2020 guideline recommending varenicline as a first-line pharmacotherapy for tobacco dependence (322). However, despite the effectiveness of pharmacologic therapy and counseling, more than two-thirds of people trying to quit do not receive treatment following evidence-based guidelines (317).
+
+
+#### Weight gain after smoking cessation has been a concern related to diabetes management and risk for new onset of disease (323). While post-cessation weight gain is an identified issue, studies have found that an average weight gain of 3–5 kg does not necessarily persist long term nor diminish the substantial cardiovascular benefit realized from smoking cessation (316). These findings highlight the need for tobacco cessation treatment that addresses eating and physical activity needs. One study in people with newly diagnosed type 2 diabetes who smoke found that smoking cessation was associated with amelioration of microalbuminuria and reduction in blood pressure after 1 year (324).
+
+
+#### In recent years, there has been an increase in the use and availability of multiple noncigarette nicotine products. The evidence regarding the effect of these products on diabetes is not as clear as that for combustible cigarettes. It is known that smokeless tobacco products, such as dip and chew, pose an increased risk for CVD and oral cancer (325,326). Vaping with e-cigarettes and related devices has gained public awareness and popularity because of perceptions that e-cigarette use is less harmful than regular cigarette smoking (327). While combustible tobacco products are clearly the most harmful, electronic products should not be characterized as harmless, as health risks with use that affect the cardiovascular and respiratory systems have been identified (328,329).
+
+
+#### Findings from the Population Assessment of Tobacco and Health (PATH) Study suggest e-cigarettes may contribute to nicotine dependence, confirming there is no safe tobacco product (330,331). Individuals with diabetes should be advised to avoid vaping and using e-cigarettes, either as an approach to stop smoking combustible cigarettes or as a recreational drug. If people are using e-cigarettes to quit, they should be advised to avoid using both combustible and electronic cigarettes, and if using only e-cigarettes, they should be advised to have a plan to quit these also (319).
+
+
+#### Increased legalization and multiple formulations of cannabis products have resulted in increased prevalence in the use of these products in all age-groups (332,333). Cannabidiol (CBD), which in its pure form has no psychoactive effect, has received attention for its potential therapeutic benefits in diabetes management. However, research shows no noticeable effect on glucose or insulin levels in adults with type 2 diabetes who use CBD (334). Significant increases in tetrahydrocannabinol (THC) concentrations in CBD products and use of additional psychoactive cannabinoid products, such as delta-8 THC, are of specific concern (335). Most of these products are currently unregulated by the FDA, and public health warnings regarding use have been issued (336).
+
+
+#### The FDA reports adverse effects related to delta-8 THC, some of which may have health implications for people with diabetes (e.g., vomiting) (336). Evidence of specific increased risk of diabetic ketoacidosis associated with cannabis use has been reported in adults with type 1 diabetes (337–339). Diabetic ketoacidosis in individuals with type 1 diabetes using cannabis is associated with cannabis hyperemesis syndrome, which is marked by severe nausea, abdominal pain, and vomiting (337–339). Recommended diagnostic criteria for cannabis hyperemesis syndrome include a blood glucose of ≥250 mg/dL, an anion gap of >10, a serum β-hydroxybutyrate level of >0.6 mmol/L, a pH level of ≥7.4, and a bicarbonate level of ≥15 mmol/L (339).
+
+
+#### Health care professionals should consider cannabis hyperemesis syndrome in people with type 1 diabetes with pH ≥7.4 and bicarbonate >15 mmol/L in the presence of ketosis (339).
+
+
+#### Diabetes education programs offer potential to systematically reach and engage individuals with diabetes in smoking cessation efforts. A cluster randomized trial found statistically significant increases in quit rates and long-term abstinence rates (>6 months) when smoking cessation interventions were offered through diabetes education clinics, regardless of motivation to quit at baseline (340). The increased prevalence in availability and use of tobacco and cannabis products and the effect on the health of people with diabetes highlights the need to ask about use of these products, educate individuals regarding the associated risks, and provide support for cessation.
+
+
+## Supporting Positive Health Behaviors
+
+
+## Recommendation
+
+
+### 5.43 Behavioral strategies should be used to support diabetes self-management and engagement in health behaviors (e.g., taking medications, using diabetes technologies, and engaging in physical activity and healthy eating) to promote optimal health-related quality of life and health outcomes. A
+
+
+#### Given associations with glycemic outcomes and risk for future complications (341,342), diabetes care professionals should support people with diabetes engaging in health-promoting behaviors (preventive, treatment, and maintenance), including blood glucose monitoring, taking insulin and medications, using diabetes technologies, engaging in physical activity, and making nutritional changes.
+
+
+#### Evidence-based behavioral strategies and multicomponent interventions, including motivational interviewing (343,344), activation (40), goal setting and action planning (344–346), problem-solving (7,345), tracking or self-monitoring health behaviors with or without feedback from a health care professional (344–346), and facilitating opportunities for social support (344–346), help people with diabetes and their caregivers or family members develop health behavior routines and overcome barriers to self-management. Behavioral economics strategies (e.g., financial incentives and exposure to information about social norms) show mixed results in the promotion of health behaviors; however, they tend to enhance motivation and demonstrate short-term benefits for behavior change (347).
+
+
+#### Multicomponent behavior change interventions have the highest efficacy for behavioral and glycemic outcomes (346,348). For youth with diabetes, family-based behavioral intervention packages and interventions that address multiple areas of the person’s life (i.e., multisystem interventions) demonstrate benefits for increasing management behaviors and improving glycemic outcomes (349). Importantly, adapting and tailoring behavior change strategies to the characteristics and needs of the individual and population are crucial (350,351). Health behavior change strategies can be delivered by behavioral health professionals, CDCES, other trained health care professionals (352,353), or qualified community health workers (345).
+
+
+#### Additionally, these approaches can be delivered via digital health tools (346,353,354). Finally, diabetes care professionals should be trained to use these methods effectively (e.g., motivational interviewing) (355).
+
+
+## Psychosocial Care
+
+
+## Recommendations
+
+
+### 5.44 Psychosocial care should be provided to all people with diabetes, with the goal of optimizing health-related quality of life and health outcomes. Such care should be integrated with routine medical care and delivered by trained health care professionals using a collaborative, person-centered, culturally informed approach. A
+
+
+### 5.45 Implement screening protocols for psychosocial concerns, including diabetes distress, depression, anxiety, fear of hypoglycemia, and disordered eating behaviors. Screen at least annually or when there is a change in disease, treatment, or life circumstances. C
+
+
+### 5.46 When indicated, refer to behavioral health professionals or other trained health care professionals, ideally those with experience in diabetes, for further assessment and treatment for symptoms of diabetes distress, depression, suicidality, anxiety, treatment-related fear of hypoglycemia, disordered eating, and/or cognitive capacities. Such specialized psychosocial care should use age-appropriate standardized and validated tools and treatment approaches. B
+
+
+### 5.47 Consider developmental factors and use age-appropriate validated tools for psychosocial screening in people with diabetes. E
+
+
+#### Please refer to the ADA position statement “Psychosocial Care for People With Diabetes” for a list of assessment tools and additional details (1) and the ADA Behavioral Health Toolkit for assessment questionnaires and surveys (professional.diabetes.org/meetings/behavioral-health-toolkit). Throughout the Standards of Care, the broad term “behavioral health” is used to encompass both 1) health behavior engagement and relevant factors and 2) behavioral health concerns and care related to living with diabetes.
+
+
+#### Psychosocial factors, including environmental, social, family, behavioral, and emotional factors, influence living with diabetes and achieving optimal health outcomes. People with diabetes and their families or caregivers face complex, multifaceted challenges integrating diabetes care into daily life (356). Clinically significant behavioral health diagnoses are considerably more prevalent in people with diabetes than in those without (357,358). Psychosocial well-being is a critical component of diabetes care and self-management. Psychological and social problems can interfere with a person’s (359–361) or family’s (361) ability to perform diabetes care tasks and negatively affect health status.
+
+
+#### In addition to affecting a person’s ability to conduct self-management, behavioral health diagnoses are associated with reduced short-term glycemic stability and increased mortality risk (358,362). Therefore, psychological symptoms, both clinical and subclinical, must be addressed.
+
+
+#### Diabetes health care professionals should routinely monitor and screen for psychosocial concerns in a timely and efficient manner and refer to appropriate services (363,364). Various health care professionals can contribute to psychosocial care based on training, experience, need, and availability (353,365,366). Ideally, qualified behavioral health professionals with specialized training and experience in diabetes should be integrated with or provide collaborative care as part of diabetes care teams (367,368). Referrals for in-depth assessment and treatment for psychosocial concerns should be made to such behavioral health professionals when indicated (369,370).
+
+
+#### A systematic review and meta-analysis showed that psychosocial interventions modestly but significantly improved A1C and behavioral health outcomes (371). It should be noted that the association between the effects on A1C and behavioral health was limited, and no intervention characteristics predicted benefit on both outcomes. Cost analyses also have shown that behavioral health interventions are both effective and cost-effective approaches for the prevention of diabetes (372).
+
+
+## Screening
+
+
+#### Health care teams and clinical practices should develop and implement psychosocial screening protocols to ensure routine monitoring of psychosocial well-being and to identify potential concerns among people with diabetes, following published guidance and recommendations (373–376). Topics to screen for may include, but are not limited to, attitudes about diabetes, expectations for treatment and outcomes (especially related to starting a new treatment or technology), general and diabetes-related mood, stress, and/or quality of life (e.g., diabetes distress, depressive symptoms, anxiety symptoms, and fear of hypoglycemia), available resources (financial, social, family, and emotional), and/or psychiatric history.
+
+
+#### Given elevated rates of suicidality among people with diabetes (377,378), screening for suicidality may also be appropriate (379–381), similar to U.S. Preventive Services Task Force statements regarding screening for some adolescents and adults in the general population (382,383). A list of age-appropriate screening and evaluation measures is provided in the ADA position statement “Psychosocial Care for People with Diabetes” (1), and guidance has been published about selection of screening tools, clinical thresholds, and frequency of screening (374,384).
+
+
+#### Key opportunities for psychosocial screening occur at diabetes diagnosis, during regularly scheduled management visits, during hospitalizations, with new onset of complications, during significant transitions in care such as from pediatric to adult care teams (385), at the time of medical treatment changes, or when problems with achieving A1C goals, quality of life, or self-management are identified. Additionally, significant changes in life circumstances and SDOH are known to affect a person’s ability to self-manage their diabetes. Thus, screening for SDOH should also be incorporated into routine care (386).
+
+
+#### In circumstances where individuals other than the person with diabetes are significantly involved in diabetes management (e.g., caregivers or family members), these issues should be monitored and treated by appropriate professionals (385,387).
+
+
+#### Standardized, validated, age-appropriate tools for psychosocial monitoring and screening can also be used (1). The ADA provides access to tools for screening specific psychosocial topics, such as diabetes distress, fear of hypoglycemia, and other relevant psychological symptoms at professional.diabetes.org/sites/default/files/media/ada_mental_health_toolkit_questionnaires.pdf.
+
+
+#### Additional information about developmentally specific psychosocial screening topics is available in Section 14, “Children and Adolescents,” and Section 13, “Older Adults.” Health care professionals may also use informal verbal inquires, for example, by asking whether there have been persistent changes in mood during the past 2 weeks or since the individual’s last appointment and whether the person can identify a triggering event or change in circumstances. Diabetes care professionals should also ask whether there are new or different barriers to treatment and self-management, such as feeling overwhelmed or stressed by having diabetes (see diabetes distress, below), changes in finances, or competing medical demands (e.g., the diagnosis of a comorbid condition).
+
+
+#### Psychological Assessment and Treatment
+
+
+#### When psychosocial concerns are identified, referral to a qualified behavioral health professional, ideally one specializing in diabetes, should be made for comprehensive evaluation, diagnosis, and treatment (353,369,370). Indications for referral may include positive screening for diabetes distress, depression, anxiety, disordered eating, or cognitive dysfunction (see Table 5.6 for a complete list). Incorporating psychosocial assessment and treatment into routine care is preferable to waiting for a specific problem or deterioration in glycemic or psychological status to occur (37,361). Health care professionals should identify and refer to behavioral health professionals knowledgeable about diabetes and psychosocial care.
+
+
+#### The ADA provides a list of behavioral health professionals who have specialized expertise or who have received education about psychosocial and behavioral issues related to diabetes in the ADA Mental Health Professional Directory (professional.diabetes.org/ada-mental-health-provider-directory). Ideally, behavioral health professionals should be embedded in diabetes care settings. In recognition of limited behavioral health resources and to optimize availability, other health care professionals who have been trained in behavioral health interventions may also provide this specialized psychosocial care (365,367,388).
+
+
+#### Although some health care professionals may not feel qualified to treat psychological problems (389), strengthening the relationship between a person with diabetes and the health care professional may increase the likelihood of a person accepting a referral for other services. Collaborative care interventions and a team approach have demonstrated efficacy in diabetes self-management, outcomes of depression, and psychosocial functioning (5,6). The ADA provides resources for a range of health professionals to support behavioral health in people with diabetes at professional.diabetes.org/meetings/behavioral-health-toolkit.
+
+
+#### Table 5.6Situations that warrant referral of a person with diabetes to a qualified behavioral health professional for evaluation and treatment
+
+
+#### A positive screen on a validated screening tool for depressive symptoms, diabetes distress, anxiety, fear of hypoglycemia, suicidality, or cognitive impairment
+
+
+#### The presence of symptoms or suspicions of disordered eating behavior, an eating disorder, or disrupted patterns of eating
+
+
+#### Intentional omission or underdosing of insulin or noninsulin medication to cause weight loss
+
+
+#### A serious mental illness is suspected
+
+
+#### In youth and families with behavioral self-care difficulties, repeated hospitalizations for diabetic ketoacidosis, failure to achieve expected developmental milestones, or significant distress
+
+
+#### Low engagement in diabetes self-management behaviors, including declining or impaired ability to perform diabetes self-management behaviors
+
+
+#### Before undergoing metabolic surgery and after surgery, if assessment reveals an ongoing need for adjustment support
+
+
+#### Evidence supports interventions for people with diabetes and psychosocial concerns, including issues that affect behavioral health. Successful therapeutic approaches include cognitive behavioral (369,390,391) and mindfulness-based therapies (392). See the sections below for details about interventions for specific psychological concerns. Behavioral interventions may also be indicated in a preventive manner even in the absence of positive psychosocial screeners, such as resilience-promoting interventions to prevent diabetes distress in adolescence (393,394) and behavioral family interventions to promote collaborative family diabetes management in early adolescence (395,396) or to support adjustment to a new treatment plan or technology (64).
+
+
+#### Psychosocial interventions can be delivered via digital health platforms (397). Group-based or shared diabetes appointments that address both medical and psychosocial issues relevant to living with diabetes are a promising model to consider (366,398).
+
+
+#### Although psychosocial interventions have demonstrated short-term efficacy, their success in sustained engagement in health behaviors and improved glycemic outcomes associated with behavioral health issues has varied. Thus, health care professionals should systematically monitor these outcomes following implementation of current evidence-based psychosocial treatments to determine ongoing needs.
+
+
+## Diabetes Distress
+
+
+## Recommendation
+
+
+### 5.48 Screen for diabetes distress at least annually in people with diabetes, caregivers, and family members, and repeat screening when treatment goals are not met, at transitional times, and/or in the presence of diabetes complications. Health care professionals can address diabetes distress and may consider referral to a qualified behavioral health professional, ideally one with experience in diabetes, for further assessment and treatment if indicated. B
+
+
+#### Diabetes distress is very common (361,399,400). Distress is distinct from depression and anxiety and has unique relationships with glycemic and other outcomes (401,402) (Tables 5.7 and 5.8). Diabetes distress refers to significant negative psychological reactions related to emotional burdens and worries specific to an individual’s experience in having to manage a demanding chronic condition such as diabetes (403). The constant behavioral demands of diabetes self-management (medication dosing, frequency, and titration as well as monitoring of glucose, food intake, eating patterns, and physical activity) and the potential or actual disease progression are directly associated with reports of diabetes distress (404).
+
+
+#### Diabetes distress in people with type 2 diabetes is common and persistent, with prevalence rates over 60% (404,405). Among people with type 1 diabetes, the prevalence of diabetes distress is 22–42%, with a 9-month incidence of 54% (400,406). In the second Diabetes Attitudes, Wishes, and Needs (DAWN2) study, 45% of the participants reported significant diabetes distress, but only 24% reported that their health care teams asked them how diabetes affected their lives (361). Similar rates of diabetes distress have been identified among adolescents with type 1 diabetes (399) and in parents of youth with type 1 diabetes. Diabetes distress negatively affects medication-taking behaviors and is linked to higher A1C, lower self-efficacy, and less optimal eating and exercise behaviors (5,403,407).
+
+
+#### Diabetes distress is also associated with symptoms of anxiety, depression, and reduced health-related quality of life (408). The experience of stigma related to living with diabetes may contribute to increased diabetes distress (409,410).
+
+
+#### Table 5.7Psychosocial concerns and their association with diabetes-related outcomes in adults with type 1 diabetes
+
+
+#### Increased A1C	Increased blood pressure	Increased cholesterol	Increased macrovascular complications	Increased microvascular complications	Decreased self-care behaviors	Comorbid psychosocial concerns	Decreased quality of life	Increased mortality
+
+
+#### Diabetes distress (406,528–530) 	+++ 	? 	+ 	+++ 	+++ 	+++ 	+++ 	+++ 	?
+
+
+#### Depression and depressive symptoms (528,529,531,532) 	+++ 	? 	+++ 	+++ 	+++ 	+++ 	+++ 	+++ 	+++
+
+
+#### Anxiety (359,533,534) 	+++ 	? 	? 	? 	? 	+++ 	+++ 	+++ 	?
+
+
+#### Disordered eating behaviors (insulin omission) (535,536) 	+++ 	? 	? 	? 	+++ 	+++ 	+++ 	+++ 	+++
+
+
+#### Serious mental illness (schizophrenia, personality disorders) (537–539) 	+++ 	? 	+ 	+++ 	+++ 	? 	+++ 	? 	+++
+
+
+#### Cognitive impairment (540–544) 	+++ 	+++ 	+++ 	+++ 	+++ 	++ 	+++ 	? 	+++
+
+
+#### +++, strong evidence (consistent findings in multiple studies of good methodological quality or one study of excellent methodological quality); ++, moderate evidence (consistent findings in multiple studies of fair methodological quality or one study of good methodological quality); +, limited evidence (evidence from one study of fair methodological quality); ?, no data available.
+
+
+#### Table 5.8Psychosocial concerns and their association with diabetes-related outcomes in adults with type 2 diabetes
+
+
+#### Increased A1C	Increased blood pressure	Increased dyslipidemia	Increased macrovascular complications	Increased microvascular complications	Decreased self-care behaviors	Comorbid psychosocial concerns	Decreased quality of life	Increased mortality
+
+
+#### Diabetes distress (545–551) 	+++ 	+ 	+ 	+++ 	+++ 	+++ 	+++ 	+++ 	+++
+
+
+#### Depression and depressive symptoms (552–559) 	+++ 	++ 	+++ 	+++ 	+++ 	+++ 	+++ 	+++ 	+++
+
+
+#### Anxiety (358,408,553,560–563) 	+++ 	++ 	+ 	+++ 	+ 	+++ 	+++ 	+++ 	+++
+
+
+#### Disordered eating behaviors (binge eating disorder, night eating syndrome) (564–567) 	+/– 	? 	? 	? 	? 	+ 	+++ 	+++ 	?
+
+
+#### Serious mental illness (schizophrenia, bipolar disorder) (568–575) 	+/– 	? 	? 	+++ 	+++ 	+++ 	+++ 	+++ 	+++
+
+
+#### Cognitive impairment (576–583) 	+++ 	+++ 	+++ 	+++ 	+++ 	+++ 	+++ 	+++ 	+++
+
+
+#### +++, strong evidence (consistent findings in multiple studies of good methodological quality or one study of excellent methodological quality); ++, moderate evidence (consistent findings in multiple studies of fair methodological quality or one study of good methodological quality); +, limited evidence (evidence from one study of fair methodological quality); +/–, inconclusive evidence; ?, no data available.
+
+
+#### Diabetes distress should be routinely monitored (411) using diabetes-specific validated measures (1), such as those available through the ADA’s website (professional.diabetes.org/sites/default/files/media/ada_mental_health_toolkit_questionnaires.pdf). As there are validated diabetes distress measures for people with type 1 and type 2 diabetes at different life stages, it is important to select a tool that is appropriate for each person or population. If diabetes distress is identified, it should be acknowledged and addressed (412). If indicated, the person should be referred for follow-up care (370).
+
+
+#### This may include specific DSMES to address areas of diabetes self-care causing distress and affecting clinical management and/or behavioral intervention from a qualified behavioral health professional, ideally one with expertise in diabetes, or from another trained health care professional (413).
+
+
+#### Several educational and behavioral intervention strategies have demonstrated benefits for diabetes distress and, to a lesser degree, glycemic outcomes. These interventions include educational, psychological, and health behavior change approaches such as DSMES, cognitive behavioral therapy (CBT), mindfulness-based therapies, motivational interviewing, and others (390,391,414,415). Interventions delivered via telephone, smartphone applications, video visits, and/or self-help modalities can be effective in reducing diabetes distress (397,416–418). DSMES has been shown to reduce diabetes distress (5,419) and may also benefit A1C when combined with peer support (420).
+
+
+#### It may be helpful to provide counseling regarding expected diabetes-related emotional distress at diagnosis and when the disease state, treatment, or life context changes (413). Two multisite RCTs with adults with type 1 diabetes, elevated diabetes distress, and elevated A1C demonstrated clinically meaningful improvements in diabetes distress and A1C through a combination of group-based intervention approaches including an educational diabetes self-management program and a psychological intervention that included emotion-focused skills (417).
+
+
+#### In adults with type 2 diabetes in the Veterans Affairs system, an RCT demonstrated that integrating a single session of mindfulness into DSMES, followed by a booster session and 24 weeks of mobile app–based home practice, significantly reduced diabetes distress compared with a DSMES-only control group (421). An RCT of CBT demonstrated positive benefits for diabetes distress, A1C, and depressive symptoms for up to 1 year among adults with type 2 diabetes and elevated symptoms of distress or depression (422). An RCT among people with type 1 and type 2 diabetes found mindful self-compassion training increased self-compassion, reduced depression and diabetes distress, and improved A1C (423).
+
+
+#### An RCT of a resilience-focused cognitive behavioral and social problem-solving intervention compared with diabetes education in teens with type 1 diabetes showed that diabetes distress and depressive symptoms were significantly reduced for up to 3 years post-intervention, although neither A1C nor self-management behaviors improved over time (394). A meta-analysis of RCTs found that in type 1 diabetes, use of automated insulin delivery systems contributed to decreases in diabetes distress compared with usual care (i.e., sensor augmented pumps, multiple daily insulin injections, continuous glucose monitoring, and predictive low-glucose suspend) (424).
+
+
+#### These recent studies support that a combination of educational, behavioral, and psychological intervention approaches is needed to address distress, depression, and A1C.
+
+
+#### There are few outcome data on long-term systematic treatment of diabetes distress integrated into routine care. As the burden of diabetes management can vary over time, diabetes distress may fluctuate and may need varying treatment approaches at different life stages and at different levels of diabetes progression.
+
+
+## Anxiety
+
+
+## Recommendations
+
+
+### 5.49 Screen people with diabetes for anxiety symptoms. Health care professionals can discuss diabetes-related worries and should consider referral to a qualified behavioral health professional for further assessment and treatment if anxiety symptoms indicate interference with diabetes self-management behaviors or quality of life. B
+
+
+### 5.50 Screen people with diabetes at risk for hypoglycemia or fear of hypoglycemia, especially if they have experienced severe and/or frequent hypoglycemic events. B
+
+
+#### Anxiety symptoms are common in people with diabetes (425) (see Tables 5.7 and 5.8), and there appear to be higher rates of generalized anxiety disorder, body dysmorphic disorder, obsessive compulsive disorder, specific phobias, and posttraumatic stress disorder in people with diabetes than in those without diabetes. The Behavioral Risk Factor Surveillance System estimated the lifetime prevalence of generalized anxiety disorder to be 19.5% in people with either type 1 or type 2 diabetes (426). A common diabetes-specific concern is fear related to hypoglycemia (427–429), which may explain avoidance of behaviors associated with lowering glucose, such as increasing insulin doses or frequency of monitoring.
+
+
+#### Factors related to greater fear of hypoglycemia in people with diabetes and family members include history of nocturnal hypoglycemia, presence of other psychological concerns, and sleep concerns (430). See Section 6, “Glycemic Goals and Hypoglycemia,” for more information about impaired awareness of hypoglycemia and related fear of hypoglycemia. Other common sources of diabetes-related anxiety include not meeting glycemic goals (425), insulin injections or infusion (431), and onset of complications (1). People with diabetes who exhibit excessive diabetes self-management behaviors well beyond what is prescribed or needed to achieve glycemic goals may be experiencing symptoms of obsessive-compulsive disorder (432).
+
+
+#### General anxiety is a predictor of injection-related anxiety and is associated with fear of hypoglycemia (433).
+
+
+#### Psychological and behavioral care can be helpful to address symptoms of anxiety in people with diabetes. Among adults with type 2 diabetes and elevated depressive symptoms, an RCT of collaborative care demonstrated benefits on anxiety symptoms for up to 1 year (434). An RCT of CBT for adults with type 2 diabetes showed a reduction in health anxiety, with CBT accounting for 77% of the reduction in health anxiety at 16 weeks of follow-up; this trial also found decreased depressive symptoms and diabetes distress (435). Additionally, an RCT showed switching from isCGM without alerts to rtCGM with alert functionality in adults with type 1 diabetes decreased hypoglycemia-related anxiety at 24 months of follow-up while reducing A1C (436).
+
+
+#### Similarly, a systematic review and meta-analysis found that people with type 1 diabetes using diabetes technologies, specifically rtCGM, sensor-augmented pumps, and automated insulin delivery, reported decreased fear of hypoglycemia independent of the reduction of hypoglycemia frequency (437). Another RCT of a CBT-based intervention reported reduced fear of hypoglycemia by 8.5% compared with control participants, increased time in range, and improved self-management behaviors in young adults with type 1 diabetes over an 8-week period (438). Thus, specialized behavioral intervention with positive adjunct of diabetes technology from a qualified professional is needed to treat hypoglycemia-related anxiety.
+
+
+## Depression
+
+
+## Recommendations
+
+
+### 5.51 Conduct at least annual screening of depressive symptoms in all people with diabetes and more frequently among those with a history of depression. Use age-appropriate, validated depression screening measures, recognizing that further evaluation will be necessary for individuals who have a positive screen. B
+
+
+### 5.52 Rescreen for depression at diagnosis of complications or when there are significant changes in medical status. B
+
+
+### 5.53 Refer to qualified behavioral health professionals or other trained health care professionals with experience using evidence-based treatment approaches for depression in conjunction with collaborative care with the diabetes treatment team. A
+
+
+#### History of depression, current depression, and antidepressant medication use are risk factors for the development of type 2 diabetes, especially if the individual has other risk factors, such as obesity and family history of type 2 diabetes (439,440). Elevated depressive symptoms and depressive disorders are common among people with diabetes (357,429) (Tables 5.7 and 5.8), affecting approximately one in four people with type 1 or type 2 diabetes (360), and among parents of youth with diabetes (441). Routine screening for depressive symptoms is indicated for people with type 1 or type 2 diabetes and gestational diabetes mellitus. Regardless of diabetes type, women have significantly higher rates of depression than men (442).
+
+
+#### For individuals with type 2 diabetes, the experience of diabetes-related stigma is associated with increased depressive symptoms (410).
+
+
+#### Routine monitoring with age-appropriate validated measures (1) can help to identify if referral is warranted (370). Multisite studies have demonstrated feasibility of implementing depressive symptom screening protocols in diabetes clinics and published practical guides for implementation (374,375). Person-centered integrated care approaches have been shown to improve both depression and glycemic outcomes (443). The behavioral health professional providing treatment for depression should be incorporated into or collaborate with the diabetes treatment team (443). Depressive symptoms may also be a manifestation of reduced quality of life secondary to diabetes burden (also see diabetes distress, above) (411).
+
+
+#### When depressive symptoms are identified, it is important to query origins and exacerbating factors, both diabetes-specific ones and those due to other life circumstances (408,444).
+
+
+#### Trials have shown consistent evidence of improvements in depressive symptoms and variable benefits for A1C when depression is treated simultaneously with diabetes (445), whether through pharmacologic treatment, group therapy, psychotherapy, parenting intervention, mindfulness-based approaches, or collaborative care (6,390,446–449). Psychological interventions addressing depressive symptoms have shown efficacy when delivered via digital technologies (447,450). A meta-analysis found that internet- and phone-delivered CBT and self-guided interventions improved depressive symptoms (451). For people with diabetes, an RCT comparing internet plus telephonic CBT to usual care found moderate to large improvements in depressive symptoms at 12 months (452).
+
+
+#### Lifestyle interventions (i.e., changing nutrition and/or physical activity) also demonstrate benefits for depressive symptoms and A1C (295) on their own and when combined with CBT (453–455). Finally, a systematic review and meta-analysis found that use of GLP-1 RAs led to significant improvement in depressive symptoms among adults with type 2 diabetes (456). It is important to note that the medical treatment plan should also be monitored in response to reduction in depressive symptoms.
+
+
+## Disordered Eating Behavior
+
+
+## Recommendations
+
+
+### 5.54 Screen for disordered or disrupted eating using validated screening measures. In addition, a review of the medical treatment plan is recommended to identify potential treatment-related effects on hunger/caloric intake. B
+
+
+### 5.55 Consider reevaluating the treatment plan of people with diabetes who present with symptoms of disordered eating behavior, an eating disorder, or disrupted patterns of eating, in consultation with a qualified professional. Key qualifications include familiarity with diabetes disease physiology, treatments for diabetes and disordered eating behaviors, and weight-related and psychological risk factors for disordered eating behaviors. B
+
+
+#### Estimated prevalence of disordered eating behavior and diagnosable eating disorders in people with diabetes varies (457–459) (see Tables 5.7 and 5.8). People with type 1 diabetes have been found to be at greater risk for eating disorders than people without diabetes (460). Prevalence of intentional insulin omission to lose weight is 10% and more common among women than men with type 1 diabetes (460). In people with type 2 diabetes, bingeing (excessive food intake with an accompanying sense of loss of control) is most commonly reported. For people with type 2 diabetes treated with insulin, intentional omission is also frequently reported (461). People with diabetes and diagnosable eating disorders have high rates of comorbid psychiatric disorders (462).
+
+
+#### People with type 1 diabetes and eating disorders often have high rates of diabetes distress and fear of hypoglycemia (463).
+
+
+#### Diabetes care professionals should monitor for disordered eating behaviors using validated measures; diabetes-specific measures are recommended to assess presence of intentional insulin omission and were found in a meta-analysis to be more strongly associated with A1C (464). When evaluating symptoms of disordered or disrupted eating (when the individual exhibits eating behaviors that appear maladaptive but are not volitional, such as bingeing caused by loss of satiety cues), etiology and motivation for the behavior should be evaluated by a qualified disordered eating professional (465). Inconsistent intervention findings point to the need for treatment of eating disorders and disordered eating behavior in the context of the condition and its treatment.
+
+
+#### Recent intervention efforts have focused on preventing disordered eating behaviors among individuals with type 1 diabetes and on supporting parents of youth with type 1 diabetes who are at risk for disordered eating; however, more RCTs with longer-term follow-up are needed (466–468).
+
+
+#### Given the complexities of treating disordered eating behaviors and disrupted eating patterns in people with diabetes, it is recommended that interprofessional care teams include or collaborate with a health professional trained to identify and treat eating behaviors and with expertise in disordered eating and diabetes (469). Key qualifications for such professionals include familiarity with diabetes physiology, weight-related and psychological risk factors for disordered eating behaviors, and treatments for diabetes and disordered eating behaviors. More rigorous methods to identify underlying mechanisms of action that drive change in eating and treatment behaviors, as well as associated mental distress, are needed (470).
+
+
+#### Health care teams may consider the appropriateness of technology use among people with diabetes and disordered eating behaviors, although more research on the risks and benefits is needed (471). Caution should be taken in labeling individuals with diabetes as having a diagnosable psychiatric disorder, i.e., an eating disorder, when disordered or disrupted eating patterns are found to be associated with the disease and its treatment. In other words, patterns of maladaptive food intake that appear to have a psychological origin may be driven by physiologic disruption in hunger and satiety cues, metabolic perturbations, and/or secondary distress because of the individual’s inability to control their hunger and satiety (465).
+
+
+#### The use of incretin therapies, specifically GLP-1 RAs and potentially dual GIP and GLP-1 RAs, may have relevance to the treatment of disrupted or disordered eating (see Section 8, “Obesity and Weight Management for the Prevention and Treatment of Type 2 Diabetes”). These therapies work in the appetite and reward circuitries to modulate food intake, reducing uncontrollable hunger and overeating (472). A systematic review found early evidence for GLP-1 RAs being effective in reducing binge-eating behaviors, but clinical trials are needed (473).
+
+
+## Serious Mental Illness
+
+
+## Recommendations
+
+
+### 5.56 Provide an increased level of support for people with diabetes and serious mental illness through enhanced monitoring of and assistance with diabetes self-management behaviors. B
+
+
+### 5.57 Monitor changes in body weight, glycemia, and lipids in adolescents and adults with diabetes who are prescribed second-generation antipsychotic medications; adjust the treatment plan accordingly, if needed. C
+
+
+#### Studies of individuals with serious mental illness, particularly schizophrenia and other thought disorders, show significantly increased rates of type 2 diabetes (474) (see Tables 5.7 and 5.8). People with schizophrenia and other thought disorders who are prescribed antipsychotic medications should be monitored for prediabetes and type 2 diabetes because of the known comorbidity. Changes in body weight, glycemia, and lipids should be monitored every 12–16 weeks, unless clinically indicated to be monitored sooner (475). Disordered thinking and judgment can make it difficult to engage in behaviors that reduce risk factors for type 2 diabetes, such as restrained eating for weight management.
+
+
+#### Further, people with serious mental illness and diabetes frequently experience moderate psychological distress, suggesting pervasive intrusion of behavioral health issues into daily functioning (476). Serious mental illness is often associated with the inability to evaluate and apply information to make judgments about treatment options. For a person with an established diagnosis of a mental illness affecting judgment, activities of daily living, and the ability to collaborate with care professionals, including a nonmedical caretaker, in treatment decision-making is beneficial. This caretaker can help improve the person’s ability to follow the agreed-upon treatment plan through both monitoring and caretaking functions (477).
+
+
+#### Coordinated management of prediabetes or diabetes and serious mental illness is recommended to achieve diabetes treatment goals. The diabetes care team, in collaboration with other care professionals, should work to provide an enhanced level of care and self-management support for people with diabetes and serious mental illness based on individual capacity and needs. Such care may include remote monitoring, facilitating health care aides, and providing diabetes training for family members, community support personnel, and other caregivers. A systematic review and meta-analysis of nonpharmacologic interventions for people with type 2 diabetes and serious mental illness showed significant reductions in psychiatric symptoms, total cholesterol, and LDL cholesterol.
+
+
+#### These nonpharmacologic interventions did not reduce A1C, triglycerides, or BMI (478). Qualitative research suggests that educational and behavioral interventions provide benefit via group support, accountability, and assistance with applying diabetes knowledge (479).
+
+
+#### Cognitive Capacity and Impairment
+
+
+## Recommendations
+
+
+### 5.58 Cognitive capacity should be monitored throughout the life span for all individuals with diabetes, particularly in those who have documented cognitive disabilities, those who experience severe hypoglycemia, very young children, and older adults. B
+
+
+### 5.59 If cognitive capacity changes or appears to be suboptimal for decision-making and/or behavioral self-management, referral for a formal assessment should be considered. E
+
+
+#### Cognitive capacity is generally defined as attention, memory, logic and reasoning, and auditory and visual processing, all of which are involved in diabetes self-management behavior (480) (see Tables 5.7 and 5.8). Long-term diabetes (type 1 or type 2) has been associated with cognitive decline (481,482). In people with type 1 diabetes, the following factors have been linked with cognitive impairment: diabetes-specific factors (e.g., younger age at diagnosis, longer disease duration, more time in glycemic extremes, recurrent DKA, higher A1C, and presence of microvascular complications), other medical factors (e.g., dyslipidemia, intestinal flora, and poorer sleep quality), and sociodemographic factors (e.g., female sex and lower educational level) (483).
+
+
+#### Diagnosis of dementia is more prevalent among people with diabetes, both type 1 and type 2 (484). Executive functioning is an aspect of cognitive capacity that has particular relevance to diabetes management. Declines in cognitive capacity have been shown to affect executive function and information processing speed; they are not consistent between people, and evidence is lacking regarding a known course of decline (485).
+
+
+#### Attention deficit hyperactivity disorder, which involves deficits in executive functions, has been linked with twice the risk of type 2 diabetes (486). Among youth and young adults with type 1 diabetes, lower executive functioning has been linked with more difficulties with diabetes self-management and higher A1C (487). In contrast, higher self-regulation has been linked with improved emotional and diabetes-specific functioning (488). Thus, monitoring cognitive capacity and skills among individuals with or at risk for diabetes is recommended, particularly regarding their ability to self-monitor and make judgments about their symptoms, physical status, and needed adjustments to their self-management behaviors, all of which are mediated by executive function (484).
+
+
+#### As with other disorders affecting mental capacity (e.g., major psychiatric disorders), the key issue is whether the person can collaborate with the care team to achieve optimal metabolic outcomes and prevent complications, both short term and long term (476). When cognitive ability is altered, declining, or absent, a lay care professional should be introduced into the care team to serve in the capacity of a day-to-day monitor as well as a liaison to the care team (1). Cognitive capacity also contributes to the ability to benefit from DSMES and may indicate the need for alternative teaching approaches as well as remote monitoring.
+
+
+#### Youth will need second-party monitoring (e.g., parents and adult caregivers) until they are developmentally able to evaluate necessary information for self-management decisions and to inform resultant behavior changes.
+
+
+#### Episodes of severe hypoglycemia are independently associated with cognitive decline as well as the more immediate symptoms of mental confusion (489). Early-onset type 1 diabetes is associated with potential long-term deficits in intellectual abilities, especially in the context of repeated episodes of severe hypoglycemia (490), and is correlated with higher A1C and sensor glucose values (491) (See Section 14, “Children and Adolescents,” for information on early-onset diabetes and cognitive abilities and the effects of severe hypoglycemia on children’s cognitive and academic performance).
+
+
+#### Thus, for myriad reasons, cognitive capacity should be assessed during routine care to ascertain the person’s ability to maintain and adjust self-management behaviors, such as dosing of medications, remediation approaches to glycemic excursions, etc., and to determine whether to enlist a caregiver in monitoring and decision-making regarding management behaviors. If cognitive capacity to conduct self-management behaviors is questioned, an age-appropriate test of cognitive capacity is recommended (1). Cognitive capacity should be evaluated in the context of the person’s age, such as in very young children who are not expected to manage their disease independently and in older adults who may require active monitoring of treatment plan behaviors.
+
+
+#### Cognitive decline is more severe in older adults with type 2 diabetes (492). Longitudinal epidemiological studies have documented that chronic hyperglycemia, acute glucose variability, older age, less education, retinopathy, and nephropathy are associated with diabetes-related cognitive dysfunction (493,494). Importantly, the risk of cognitive decline can be reduced through improved A1C (495). Further, glucose-lowering treatments may decrease the risk of cognitive decline. A systematic review and network meta-analysis showed that treatment with SGLT2 inhibitors and GLP-1 RAs had a decreased risk for cognitive impairment, whereas sulfonylureas had the highest increased risk for cognitive impairment (496).
+
+
+#### Additionally, exercise may be a potential nonpharmacologic treatment pathway for cognitive impairment in older adults with type 2 diabetes (497).
+
+
+## Sleep Health
+
+
+## Recommendations
+
+
+### 5.60 Consider screening for sleep health in people with diabetes, including symptoms of sleep disorders, disruptions to sleep due to diabetes symptoms or management needs, and worries about sleep. Refer to sleep medicine specialists and/or qualified behavioral health professionals as indicated. B
+
+
+### 5.61 Counsel people with diabetes to practice sleep-promoting routines and habits. A
+
+
+#### The associations between sleep problems and diabetes are complex: sleep disorders are a risk factor for developing type 2 diabetes (498,499) and possibly gestational diabetes mellitus (500). People with diabetes across the life span often experience sleep disruptions and reduced sleep quality (501,502), and sleep problems are also common in parents of youth with diabetes, especially soon after diagnosis (503,504). Disrupted sleep and sleep disorders, including obstructive sleep apnea (OSA) (505), insomnia, and sleep disturbances (506), are common among people with diabetes. In type 1 diabetes, estimates of poor sleep range from 30% to 50% (507), and estimates of moderate to severe OSA are >50% (505).
+
+
+#### In type 2 diabetes, 24–86% of people are estimated to have OSA (508), 39% to have insomnia, and 8–45% to have restless leg syndrome (i.e., an uncontrollable urge to move legs) (509). Further, people with type 2 diabetes and restless leg syndrome are more likely to experience microvascular and macrovascular complications (510) as well as depression (511). Additionally, people with diabetes who perform shift work increase their risk for circadian rhythm disorders, which are associated with higher A1C (512), neuropathy (513), and decreased psychological well-being (513).
+
+
+#### Health care professionals should consider a comprehensive evaluation of the daily lifestyles of people with diabetes to decrease risk factors, including low sleep duration, shift work, and days off, given their associations with hyperglycemia, hypertension, dyslipidemia, and weight gain (514).
+
+
+#### The high prevalence of OSA in people with diabetes poses significant clinical implications for diabetes management. Sleep fragmentation and hypoxemia activate the sympathetic nervous system, contributing to hyperglycemia, insulin resistance, increased circulating free fatty acids, impaired microcirculation, oxidative stress, and psychological stress (515). A systematic review and meta-analysis of 11 RCTs with 964 total participants found that continuous positive airway pressure (CPAP) significantly reduced A1C by 0.24% (95% CI −0.43 to −0.06%, P = 0.001) (516). Similarly, a randomized proof-of-concept study with 30 adults with OSA and obesity compared CPAP therapy, GLP-1 RA–mediated weight loss, and both in combination for 24 weeks (517).
+
+
+#### Findings showed that CPAP alone and in combination reduced apnea-hypopnea severity more than GLP-1 RA–mediated weight loss alone. CPAP therapy also improved vascular inflammation and reduced unstable plaque volume, suggesting potential benefits for early CVD. Two phase 3, double-blind RCTs with 469 adults with OSA and obesity showed that a dual GIP and GLP-1 RA significantly reduced sleep apnea severity and body weight compared with placebo after 52 weeks (518). More RCTs with people with diabetes are needed to determine the effectiveness of GLP-1 RAs and dual GIP and GLP-1 RAs as potential treatments for OSA.
+
+
+#### Sleep disturbances are associated with less engagement in diabetes self-management and can interfere with achieving and maintaining glucose levels within the goal range among people with type 1 and type 2 diabetes (502,505). Risk of hypoglycemia poses specific challenges for sleep in people with type 1 diabetes and may require detailed assessment and treatment approaches (519). People with type 1 diabetes and their family members also describe diabetes management needs interfering with sleep and experiencing worries about poor sleep (520). Both helpful and challenging aspects of diabetes technology use have been described in relation to sleep (520), with the greatest perceived benefits being related to automated insulin delivery systems (521–523).
+
+
+#### For these reasons, detection and treatment of sleep disorders should be considered a part of standardized care for people with type 1 and type 2 diabetes.
+
+
+#### As for the general population, there are evidence-based strategies to improve sleep for people with diabetes. CBT shows benefits for sleep in people with diabetes (390), including CBT for insomnia, which demonstrates improvements in sleep outcomes and possible small improvements in A1C (524), fasting glucose (524), and depressive symptoms (525). There is also evidence that sleep extension and pharmacologic treatments for sleep can improve sleep outcomes and possibly insulin resistance (519,524). Lastly, sleep education, or sleep hygiene, improves sleep quality, reduces A1C, and decreases insulin resistance in adults with type 2 diabetes (526).
+
+
+#### Thus, diabetes care professionals are encouraged to counsel people with diabetes to use sleep-promoting routines and practices, such as establishing a regular bedtime and rise time, creating a dark, quiet area for sleep with temperature and humidity control, establishing a pre-sleep routine, putting electronic devices (except diabetes management devices) in silent/off mode, exercising during the day, avoiding daytime naps, limiting caffeine and nicotine in the evening, avoiding spicy foods at night, and avoiding alcohol before bedtime (527). For people with diabetes who have significant sleep difficulties, referral to sleep specialists to address the medical and behavioral aspects of sleep is recommended, ideally in collaboration with the diabetes care team (Fig. 5.2).
+
+
+#### *A complete list of members of the American Diabetes Association Professional Practice Committee can be found at https://doi.org/10.2337/dc25-SINT.
+
+
+#### Duality of interest information for each author is available at https://doi.org/10.2337/dc25-SDIS.
+
