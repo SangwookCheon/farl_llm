@@ -1,0 +1,108 @@
+CLINICAL INFO
+# Source: US NHANES 2021–2023-style variables (single patient snapshot)
+
+[Demographics]
+RIAGENDR (Gender): 2  (Female)
+RIDAGEYR (Age, years): 58
+RIDRETH3 (Race/Hispanic origin): 3  (Non-Hispanic White)
+DMDEDUC2 (Education level, adults 20+): 3  (High school graduate/GED)
+DMDMARTZ (Marital status): 1  (Married)
+DMDHHSIZ (Household size): 3
+INDFMPIR (Family income-to-poverty ratio): 1.5
+
+[Anthropometrics & Examination]
+BMXWT (Weight, kg): 92.0
+BMXHT (Standing height, cm): 160.0
+BMXBMI (Body mass index, kg/m2): 35.9
+BMXWAIST (Waist circumference, cm): 108.0
+BMXHIP (Hip circumference, cm): 115.0
+BPXOSY3 (Systolic BP, 3rd reading, mmHg): 148
+BPXODI3 (Diastolic BP, 3rd reading, mmHg): 86
+BPXOPLS3 (Pulse, 3rd reading, bpm): 84
+
+[Laboratory]
+LBXGH (Glycohemoglobin / HbA1c, %): 8.4
+URDACT (Urine albumin-creatinine ratio, mg/g): 130
+LBDHDD (Direct HDL-cholesterol, mg/dL): 38
+LBXWBCSI (WBC count, 1000 cells/µL): 7.2
+LBXHGB (Hemoglobin, g/dL): 13.0
+LBXHCT (Hematocrit, %): 39.0
+LBXSATSI (ALT, IU/L): 42
+LBXSASSI (AST, IU/L): 40
+LBXSAL (Albumin, g/dL): 4.1
+LBXSCR (Serum creatinine, mg/dL): 0.9
+LBXSCH (Total cholesterol, mg/dL): 210
+LBXSTR (Triglycerides, mg/dL): 260
+LBXSGTSI (GGT, IU/L): 55
+LBXIN (Insulin, µU/mL): 24
+LBXHSCRP (High-sensitivity CRP, mg/L): 3.5
+
+[Questionnaire – Smoking, Physical Activity, Alcohol, Health Status]
+SMQ040 (Currently smokes cigarettes?): 3  (Not at all)
+
+PAD790Q (Frequency of moderate LTPA): 2
+PAD790U (Unit for moderate LTPA frequency): 1  (Times per week)
+PAD800  (Minutes of moderate LTPA per session): 20
+
+PAD810Q (Frequency of vigorous LTPA): 0  (None)
+PAD810U (Unit for vigorous LTPA frequency): 0  (Not applicable)
+PAD820  (Minutes of vigorous LTPA per session): 0
+
+# Derived from PAQ: MVPA ≈ 40 minutes/week (moderate only)
+
+ALQ121 (How often drink alcohol in past 12 months): 2  (1–2 times per month)
+ALQ130 (Average # of drinks per drinking day): 1
+
+HUQ010 (General health condition): 3  (Fair)
+HUQ030 (Routine place for health care): 1  (Yes, has a usual place)
+
+Current DBS (diabetes burden score, 0–1): 0.78
+
+
+RL ACTION PLAN
+# 5-step sequence of variable edits produced by Actor-Critic policy
+
+Step 1:
+  Variable: MVPA (weekly minutes, derived from PAD790Q/U and PAD800)
+  Baseline value: 40 minutes/week
+  Suggested delta: +30 minutes/week
+  Target value: 70 minutes/week
+
+Step 2:
+  Variable: LBXGH (HbA1c, %)
+  Baseline value: 8.4
+  Suggested delta: -0.7
+  Target value: 7.7
+
+Step 3:
+  Variable: LBXSTR (Triglycerides, mg/dL)
+  Baseline value: 260
+  Suggested delta: -40
+  Target value: 220
+
+Step 4:
+  Variable: BMXBMI (Body mass index, kg/m2)
+  Baseline value: 35.9
+  Suggested delta: -1.5
+  Target value: 34.4
+
+Step 5:
+  Variable: “Sugary_drinks_per_day” (behavioural variable derived from dietary history)
+  Baseline value: 1.5 drinks/day
+  Suggested delta: -1.5
+  Target value: 0 drinks/day
+
+Final DBS after applying all 5 steps (simulated): 0.63
+
+
+PATIENT CONTEXT
+- Mobility: Uses a power wheelchair outside the home because of knee osteoarthritis and neuropathic foot pain. Can stand and pivot for a few minutes with support but cannot walk more than a few steps.
+- Daily routine: Retired; spends most of the day at home watching TV or using a tablet. Sleeps around 6 hours/night with frequent awakenings.
+- Social situation: Lives with spouse; spouse does most of the cooking and grocery shopping. One adult child lives in another city.
+- Financial situation: Household income-to-poverty ratio 1.5; reports needing to “watch food costs” and prefers affordable ingredients and no gym membership.
+- Eating pattern (self-report): Typically eats 2 main meals and 1–2 snacks per day. Drinks about 1–2 sugary sodas most days of the week. Often eats dinner late (after 9 pm).
+- Health beliefs and barriers:
+  - Worries about low blood sugar if she “eats less,” though she has not had documented severe hypoglycemia.
+  - Feels intimidated by the idea of “exercise,” but is open to trying short, chair-based movements if clearly explained.
+  - Rates her overall health as “fair” and is concerned about future kidney problems because of high urine ACR.
+- Healthcare access: Has a usual community health center she visits every 3–4 months. Has a blood pressure monitor at home but does not check regularly.

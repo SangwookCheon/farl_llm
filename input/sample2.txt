@@ -1,0 +1,120 @@
+CLINICAL INFO
+# Source: US NHANES 2021–2023-style variables (single patient snapshot)
+
+[Demographics]
+RIAGENDR (Gender): 1  (Male)
+RIDAGEYR (Age, years): 27
+RIDRETH3 (Race/Hispanic origin): 2  (Mexican American)
+DMDEDUC2 (Education level, adults 20+): 2  (Some college)
+DMDMARTZ (Marital status): 6  (Never married)
+DMDHHSIZ (Household size): 1
+INDFMPIR (Family income-to-poverty ratio): 0.45  (Severe poverty)
+
+[Anthropometrics & Examination]
+BMXWT (Weight, kg): 104.0
+BMXHT (Standing height, cm): 175.0
+BMXBMI (Body mass index, kg/m2): 33.9
+BMXWAIST (Waist circumference, cm): 112.0
+BMXHIP (Hip circumference, cm): 110.0
+BPXOSY3 (Systolic BP, 3rd reading, mmHg): 136
+BPXODI3 (Diastolic BP, 3rd reading, mmHg): 88
+BPXOPLS3 (Pulse, 3rd reading, bpm): 92
+
+[Laboratory]
+LBXGH (Glycohemoglobin / HbA1c, %): 7.1  (new diagnosis)
+URDACT (Urine albumin-creatinine ratio, mg/g): 18
+LBDHDD (Direct HDL-cholesterol, mg/dL): 34
+LBXWBCSI (WBC count, 1000 cells/µL): 6.8
+LBXHGB (Hemoglobin, g/dL): 15.0
+LBXHCT (Hematocrit, %): 45.0
+LBXSATSI (ALT, IU/L): 65  (elevated)
+LBXSASSI (AST, IU/L): 40
+LBXSAL (Albumin, g/dL): 4.3
+LBXSCR (Serum creatinine, mg/dL): 0.82
+LBXSCH (Total cholesterol, mg/dL): 195
+LBXSTR (Triglycerides, mg/dL): 330
+LBXSGTSI (GGT, IU/L): 120  (significantly elevated)
+LBXIN (Insulin, µU/mL): 36
+LBXHSCRP (High-sensitivity CRP, mg/L): 4.8  (elevated inflammation)
+
+[Questionnaire – Smoking, Physical Activity, Alcohol, Health Status]
+SMQ040 (Currently smokes cigarettes?): 2  (Some days; ~5 cigarettes/day)
+
+PAD790Q (Frequency of moderate LTPA): 0
+PAD790U: 0
+PAD800: 0
+
+PAD810Q (Frequency of vigorous LTPA): 1
+PAD810U (Unit): 1  (Times per week)
+PAD820 (Minutes vigorous per session): 15
+
+# Derived MVPA ≈ 15 minutes/week
+
+ALQ121 (How often drink alcohol past 12 months): 4  (3–4 times per week)
+ALQ130 (Average # of drinks per drinking day): 4–5 drinks
+
+HUQ010 (General health condition): 4  (Poor)
+HUQ030 (Routine place for health care): 3  (No usual place)
+
+Current DBS (diabetes burden score, 0–1): 0.62
+
+
+RL ACTION PLAN
+# 5-step sequence of variable edits produced by Actor-Critic policy
+
+Step 1:
+  Variable: MVPA (weekly minutes)
+  Baseline value: 15 minutes/week
+  Suggested delta: +45 minutes/week
+  Target value: 60 minutes/week
+
+Step 2:
+  Variable: Sugary_drinks_per_day
+  Baseline value: 2.0 drinks/day
+  Suggested delta: -2.0
+  Target value: 0 drinks/day
+
+Step 3:
+  Variable: LBXSTR (Triglycerides, mg/dL)
+  Baseline value: 330
+  Suggested delta: -60
+  Target value: 270
+
+Step 4:
+  Variable: ALQ130 (Average drinks per drinking day)
+  Baseline value: 4–5 drinks/day
+  Suggested delta: -2
+  Target value: 2–3 drinks/day
+
+Step 5:
+  Variable: BMXBMI (Body mass index, kg/m2)
+  Baseline value: 33.9
+  Suggested delta: -1.2
+  Target value: 32.7
+
+Final DBS after applying all 5 steps (simulated): 0.51
+
+
+PATIENT CONTEXT
+- Housing: Lives in unstable housing (“couch surfing” with friends). Limited access to refrigeration and consistent meal preparation.
+- Work: Night-shift warehouse worker (shift varies between 10 pm–6 am or 1 am–9 am). Eats irregularly due to work demands.
+- Mobility: Fully ambulatory; physically strong from warehouse lifting, but sleep-deprived and often fatigued.
+- Food access:
+  - Relies on discount stores, corner stores, and occasionally food pantries.
+  - Cannot reliably afford fresh produce.
+  - Drinks multiple energy drinks per shift to stay awake.
+- Cooking:
+  - No reliable kitchen access; often eats microwavable meals, instant noodles, or fried convenience-store foods.
+- Stress & mental health:
+  - Reports depressive symptoms, difficulty concentrating, and high stress about housing security.
+  - Sleeps 4–5 hours/day with frequent interruptions.
+- Social environment:
+  - Drinks with coworkers after shifts.
+  - Cigarette use increases when under pressure.
+- Health beliefs & barriers:
+  - Feels diabetes diagnosis is “embarrassing.”
+  - Believes healthy food is “too expensive.”
+  - Thinks exercise requires a gym or structured program.
+- Healthcare access:
+  - No primary care provider.
+  - Has not had follow-up after receiving the lab results.
